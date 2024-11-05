@@ -14,14 +14,14 @@ from typing import List, Optional
 load_dotenv()
 
 
-os.getenv('GOOGLE_API_KEY') = st.secrets['GOOGLE_API_KEY']
+os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
 
 
-os.getenv('LANGCHAIN_TRACING_V2')='true'
-os.getenv('LANGCHAIN_ENDPOINT')="https://api.smith.langchain.com"
-os.getenv('LANGCHAIN_API_KEY')=st.secrets['LANGCHAIN_API_KEY']
-os.getenv('LANGCHAIN_PROJECT')=st.secrets['LANGCHAIN_PROJECT']
+os.environ['LANGCHAIN_TRACING_V2']='true'
+os.environ['LANGCHAIN_ENDPOINT']="https://api.smith.langchain.com"
+os.environ['LANGCHAIN_API_KEY']=st.secrets['LANGCHAIN_API_KEY']
+os.environ['LANGCHAIN_PROJECT']=st.secrets['LANGCHAIN_PROJECT']
 
 
 
