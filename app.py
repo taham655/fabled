@@ -9,13 +9,14 @@ from dotenv import load_dotenv
 import os
 import json
 from typing import List, Optional
+from tenacity import retry, stop_after_attempt, wait_exponential
+from datetime import datetime
 
 
 load_dotenv()
 
 
 os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
-
 
 
 os.environ['LANGCHAIN_TRACING_V2']='true'
@@ -40,6 +41,8 @@ if 'model' not in st.session_state:
     )
 if 'analysis_complete' not in st.session_state:
     st.session_state.analysis_complete = False
+if 'book_text' not in st.session_state:
+    st.session_state.book_text = None
 
 
 class BasicCharacter(BaseModel):
@@ -147,11 +150,26 @@ third_pass_prompt = PromptTemplate(
     partial_variables={"format_instructions": depth_parser.get_format_instructions()}
 )
 
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
+def save_to_json(data, filename='character_analysis.json'):
+    """Save data to JSON file with retry logic"""
+    try:
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        return True
+    except Exception as e:
+        st.error(f"Error saving JSON file: {str(e)}")
+        raise
+
 def analyze_characters(book_text: str):
     """Analyze characters in a given text using a three-pass system."""
     model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.7)
 
     try:
+        # Validate input text
+        if not book_text or len(book_text.strip()) < 100:
+            raise ValueError("The uploaded PDF appears to be empty or too short.")
+
         with st.spinner("Finding all the characters in the story... This may take a few minutes... 📚✨"):
             first_pass = model.invoke(first_pass_prompt.format(book_text=book_text))
             basic_characters = basic_parser.parse(first_pass.content)
@@ -159,6 +177,10 @@ def analyze_characters(book_text: str):
 
         character_list = [{"name": char.name, "role": char.role}
                          for char in basic_characters.characters]
+
+        # Add validation for character list
+        if not character_list or len(character_list) == 0:
+            raise ValueError("No characters were identified in the text. Please check the PDF content.")
 
         with st.spinner("Getting to know their personalities and stories... 🤝💭"):
             second_pass = model.invoke(second_pass_prompt.format(
@@ -203,18 +225,22 @@ def analyze_characters(book_text: str):
                     "memorable_quotes": char.memorable_quotes
                 }
                 for char in character_depth.characters
-            ]
+            ],
+            "analysis_timestamp": datetime.now().isoformat()  # Add timestamp for tracking
         }
 
-        # Save to JSON file
-        with open('character_analysis.json', 'w', encoding='utf-8') as f:
-            json.dump(result, f, indent=4, ensure_ascii=False)
-
-        return result
-
+        # Save with retry logic
+        if save_to_json(result):
+            return result
+        
+    except ValueError as ve:
+        st.error(f"Analysis Error: {str(ve)}")
+        st.session_state.analysis_complete = False
+        return None
     except Exception as e:
-        st.error(f"Error during character analysis: {str(e)}")
-        raise
+        st.error(f"Unexpected error during analysis: {str(e)}")
+        st.session_state.analysis_complete = False
+        return None
 
 def load_character_data():
     """Load character data from the JSON file"""
@@ -309,33 +335,188 @@ def get_chatbot_response(prompt):
         st.error(f"Error getting response: {str(e)}")
         return None
 
+def validate_fiction_content(text: str) -> tuple[bool, str]:
+    """
+    Validates if the provided text appears to be from a fictional book.
+    Returns (is_valid, message)
+    """
+    validation_prompt = """Analyze the following text and determine if it appears to be from a fictional book/story. 
+    Consider elements like narrative structure, characters, and storytelling.
+    
+    Respond with either:
+    - "VALID: [reason]" if it appears to be fiction
+    - "INVALID: [reason]" if it appears to be non-fiction, technical document, or other content
+    
+    Text to analyze:
+    {text}
+    """
+    
+    try:
+        model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
+        # Only analyze first and last 1000 characters to keep within context window
+        sample_text = text[:1000] + "..." + text[-1000:]
+        response = model.invoke(validation_prompt.format(text=sample_text))
+        
+        result = response.content.strip().upper()
+        is_valid = result.startswith("VALID:")
+        message = result.split(":", 1)[1].strip()
+        
+        return is_valid, message
+        
+    except Exception as e:
+        return False, f"Error validating content: {str(e)}"
+
+def generate_pov_chapter(character_name: str, book_text: str, character_details: dict) -> str:
+    """Generate first-person POV of the first chapter for the selected character"""
+    
+    try:
+        st.write("Debug: Starting POV generation process...")
+        model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0)
+        
+        # take the first portion of the text (approximately 5-6 pages worth)
+        initial_text = book_text[:8000].strip()
+        if not initial_text:
+            raise ValueError("Could not extract text content.")
+            
+        st.write(f"Debug: Successfully extracted opening section ({len(initial_text)} characters)")
+        
+        # Initialize variables for iterative generation
+        full_pov = []
+        chunk_size = 1000  # Smaller chunks for better processing
+        overlap = 50
+        
+        # Split text into chunks
+        chunks = [initial_text[i:i + chunk_size] for i in range(0, len(initial_text), chunk_size - overlap)]
+        st.write(f"Debug: Processing {len(chunks)} chunks")
+        
+        # Template for POV conversion
+        pov_prompt = """As {character_name}, rewrite this part of the story in first-person POV (using "I", "my", etc.).
+        Include your thoughts, feelings, and emotions as events unfold.
+        
+        Your personality traits: {traits}
+        Your background: {background}
+        
+        Previous context (if any):
+        {previous_context}
+        
+        Current scene to rewrite:
+        {chunk}
+        
+        Write your first-person perspective, maintaining all story events but adding your personal thoughts and feelings:"""
+        
+        with st.spinner("Generating your character's POV... 📝"):
+            progress_bar = st.progress(0)
+            
+            for i, chunk in enumerate(chunks):
+                st.write(f"Debug: Processing chunk {i+1}/{len(chunks)}")
+                
+                # Get previous context
+                previous_context = ""
+                if i > 0 and full_pov:
+                    previous_lines = full_pov[-1].split('\n')[-2:]
+                    previous_context = '\n'.join(previous_lines)
+                
+                try:
+                    # Generate POV for this chunk
+                    pov_response = model.invoke(
+                        pov_prompt.format(
+                            character_name=character_name,
+                            traits=', '.join(character_details['depth']['personality_traits']),
+                            background=character_details['description']['detailed_description'][:300],  # Shorter background
+                            previous_context=previous_context,
+                            chunk=chunk
+                        )
+                    )
+                    
+                    if pov_response and pov_response.content:
+                        full_pov.append(pov_response.content)
+                        st.write(f"Debug: Successfully generated chunk {i+1}")
+                    else:
+                        st.error(f"Failed to generate POV for chunk {i+1}")
+                        continue
+                        
+                except Exception as chunk_error:
+                    st.error(f"Error processing chunk {i+1}: {str(chunk_error)}")
+                    continue
+                
+                # Update progress
+                progress = (i + 1) / len(chunks)
+                progress_bar.progress(progress)
+        
+        if not full_pov:
+            st.error("No POV content was generated.")
+            return None
+            
+        combined_pov = '\n\n'.join(full_pov)
+        st.write("Debug: POV generation complete")
+        
+        return combined_pov
+        
+    except Exception as e:
+        st.error(f"Error in POV generation: {str(e)}")
+        st.exception(e)  
+        return None
+    
 def main():
     st.title("Talk to Literary Characters 📚🗣️")
 
 
     if not st.session_state.analysis_complete:
         st.subheader("Upload PDF for Analysis")
+        st.caption("Please upload a fictional book/story PDF. Technical documents, textbooks, or other non-fiction content are not supported.")
         uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
         if uploaded_file is not None:
+            try:
+                # Validate file size
+                file_size = uploaded_file.size
+                if file_size > 10 * 1024 * 1024:  # 10MB limit
+                    st.error("File is too large. Please upload a PDF smaller than 10MB.")
+                    return
 
-            with open("temp.pdf", "wb") as f:
-                f.write(uploaded_file.getvalue())
+                with open("temp.pdf", "wb") as f:
+                    f.write(uploaded_file.getvalue())
 
-            if st.button("Let's Go!"):
+                if st.button("Let's Go!"):
+                    try:
+                        loader = PyPDFLoader("temp.pdf")
+                        document = loader.load()
+                        
+                        if not document:
+                            st.error("Could not read the PDF file. Please ensure it's a valid PDF document.")
+                            return
 
-                loader = PyPDFLoader("temp.pdf")
-                document = loader.load()
-                book_text = "\n\n".join(doc.page_content for doc in document)
+                        book_text = "\n\n".join(doc.page_content for doc in document)
+                        st.session_state.book_text = book_text
+                        
+                        with st.spinner("Validating document content..."):
+                            is_fiction, message = validate_fiction_content(book_text)
+                            
+                            if not is_fiction:
+                                st.error(f"This doesn't appear to be a fictional book. {message}")
+                                st.info("Please upload a fictional book or story. This tool is designed specifically for analyzing fictional characters.")
+                                return
+                        
+                        result = analyze_characters(book_text)
+                        if result:
+                            st.session_state.analysis_complete = True
+                            st.success("Character analysis complete! You can now start chatting with the characters.")
+                            st.rerun()
 
+                    except Exception as e:
+                        st.error(f"Error processing PDF: {str(e)}")
+                        st.session_state.analysis_complete = False
+                    finally:
+                        # Clean up temporary file
+                        if os.path.exists("temp.pdf"):
+                            try:
+                                os.remove("temp.pdf")
+                            except Exception as e:
+                                st.warning(f"Could not remove temporary file: {str(e)}")
 
-                analyze_characters(book_text)
-                st.session_state.analysis_complete = True
-                st.success("Character analysis complete! You can now start chatting with the characters.")
-
-                if os.path.exists("temp.pdf"):
-                  os.remove("temp.pdf")
-                st.rerun()
+            except Exception as e:
+                st.error(f"Error handling uploaded file: {str(e)}")
+                st.session_state.analysis_complete = False
 
     else:
 
@@ -372,28 +553,63 @@ def main():
 
 
         if st.session_state.current_character:
-            st.write(f"Chatting with: **{st.session_state.current_character}**")
+            col1, col2 = st.columns([3, 1])
+            
+            with col1:
+                st.write(f"Chatting with: **{st.session_state.current_character}**")
+            
+            with col2:
+                if st.button("📖 Your POV", help="Generate this character's first-person perspective of Chapter 1"):
+                    try:
+                        if st.session_state.book_text is None:
+                            st.error("Original text not found. Please restart the analysis.")
+                            return
+                        
+                        st.write("Debug: Starting POV generation process...")
+                        pov_chapter = generate_pov_chapter(
+                            st.session_state.current_character,
+                            st.session_state.book_text,
+                            character_details
+                        )
+                        
+                        if pov_chapter:
+                            pov_container = st.container()
+                            with pov_container:
+                                with st.expander("Chapter 1 - Through My Eyes", expanded=True):
+                                    st.markdown("---")
+                                    st.markdown(pov_chapter)
+                                    st.markdown("---")
+                                    
+                                    # Add download button for the POV chapter
+                                    pov_filename = f"{st.session_state.current_character.replace(' ', '_')}_POV_Chapter1.txt"
+                                    st.download_button(
+                                        label="💾 Download POV Chapter",
+                                        data=pov_chapter,
+                                        file_name=pov_filename,
+                                        mime="text/plain"
+                                    )
+                        else:
+                            st.error("Failed to generate POV chapter. Please try again.")
+                    
+                    except Exception as e:
+                        st.error(f"Error generating POV chapter: {str(e)}")
+                        st.exception(e)
 
 
             for message in st.session_state.messages:
                 with st.chat_message(message["role"]):
                     st.write(message["content"])
 
-
             if prompt := st.chat_input("Type your message here..."):
-
                 st.session_state.messages.append({"role": "user", "content": prompt})
                 with st.chat_message("user"):
                     st.write(prompt)
 
-
                 response = get_chatbot_response(prompt)
                 if response:
                     st.session_state.messages.append({"role": "assistant", "content": response})
-
                     with st.chat_message("assistant"):
                         st.write(response)
-
 
                 st.rerun()
         else:
@@ -405,6 +621,7 @@ def main():
             st.session_state.messages = []
             st.session_state.current_character = None
             st.session_state.character_prompt = None
+            st.session_state.book_text = None  # Clear stored book text
             if os.path.exists("temp.pdf"):
                 os.remove("temp.pdf")
             if os.path.exists("character_analysis.json"):

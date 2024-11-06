@@ -1,473 +1,337 @@
 {
     "basic_info": [
         {
-            "name": "Harry Potter",
+            "name": "Amir",
             "role": "Protagonist",
-            "plot_importance": "Harry is the central character, the 'boy who lived,' and the story revolves around his discovery of his magical heritage and his first year at Hogwarts.  The entire plot is driven by his existence and Voldemort's attempt to regain power through the Sorcerer's Stone, which is linked to Harry's survival.",
+            "plot_importance": "Amir is the narrator and central character. The story revolves around his childhood experiences, his relationship with Hassan, his guilt and betrayal, and his eventual journey of redemption.",
             "importance_level": 10,
             "key_relationships": [
-                "Dursleys (Antagonistic/Unwilling Guardians)",
-                "Hagrid (Protector/Guide)",
-                "Ron Weasley (Friend/Confidant)",
-                "Hermione Granger (Friend/Confidant)",
-                "Albus Dumbledore (Mentor/Protector)",
-                "Severus Snape (Antagonist/Complex Figure)",
-                "Lord Voldemort (Antagonist/Archenemy)"
+                "Baba (father)",
+                "Hassan (half-brother/friend/servant)",
+                "Ali (Hassan's father/Baba's servant)",
+                "Rahim Khan (Baba's friend/Amir's mentor)",
+                "Soraya (wife)",
+                "Sohrab (Hassan's son)"
             ]
         },
         {
-            "name": "Rubeus Hagrid",
+            "name": "Hassan",
+            "role": "Supporting Character (arguably deuteragonist)",
+            "plot_importance": "Hassan is Amir's childhood friend and half-brother (a fact unknown to both of them for much of the story). His unwavering loyalty and sacrifice deeply impact Amir's life and drive Amir's quest for redemption.",
+            "importance_level": 10,
+            "key_relationships": [
+                "Amir",
+                "Ali (father)",
+                "Sanaubar (mother)",
+                "Rahim Khan",
+                "Sohrab (son)",
+                "Farzana (wife)"
+            ]
+        },
+        {
+            "name": "Baba",
             "role": "Supporting Character",
-            "plot_importance": "Hagrid acts as Harry's guide into the wizarding world, delivering Harry's Hogwarts letter and taking him to Diagon Alley. He provides crucial information (though sometimes unintentionally) about Harry's past and the Sorcerer's Stone, inadvertently aiding Voldemort's plan by revealing Fluffy's weakness.",
-            "importance_level": 8,
-            "key_relationships": [
-                "Harry Potter",
-                "Albus Dumbledore",
-                "Dursleys"
-            ]
-        },
-        {
-            "name": "Vernon Dursley",
-            "role": "Antagonist/Unwilling Guardian",
-            "plot_importance": "Vernon Dursley, Harry's uncle, represents the oppressive Muggle world that rejects magic. His refusal to acknowledge Harry's magical heritage and his mistreatment of Harry serve to highlight the contrast between the ordinary and the magical. While not directly involved in the central conflict, his actions shape Harry's character and motivate his desire to escape to Hogwarts.",
-            "importance_level": 5,
-            "key_relationships": [
-                "Petunia Dursley",
-                "Dudley Dursley",
-                "Harry Potter"
-            ]
-        },
-        {
-            "name": "Petunia Dursley",
-            "role": "Antagonist/Unwilling Guardian",
-            "plot_importance": "Petunia, Harry's aunt, shares her husband's disdain for magic, stemming from her jealousy of her sister, Lily Potter. Her resentment and mistreatment of Harry contribute to his difficult upbringing and reinforce the conflict between the Muggle and wizarding worlds.",
-            "importance_level": 4,
-            "key_relationships": [
-                "Vernon Dursley",
-                "Dudley Dursley",
-                "Harry Potter",
-                "Lily Potter (deceased)"
-            ]
-        },
-        {
-            "name": "Dudley Dursley",
-            "role": "Antagonist",
-            "plot_importance": "Dudley, Harry's cousin, is a spoiled bully who torments Harry throughout his childhood. His actions establish the Dursleys' unpleasant nature and Harry's difficult upbringing. While his role is minor in this book, his bullying contributes to Harry's character development.",
-            "importance_level": 3,
-            "key_relationships": [
-                "Vernon Dursley",
-                "Petunia Dursley",
-                "Harry Potter"
-            ]
-        },
-        {
-            "name": "Albus Dumbledore",
-            "role": "Supporting Character/Mentor",
-            "plot_importance": "Dumbledore is the headmaster of Hogwarts and a powerful, wise wizard who guides and protects Harry. He entrusts Hagrid with bringing Harry to the Dursleys and retrieving the Stone from Gringotts, orchestrates the Stone's protection, and ultimately ensures its destruction. His actions directly influence the central conflict and Harry's journey.",
+            "plot_importance": "Baba is Amir's father. His complex relationship with Amir, shaped by his own secrets and regrets, fuels Amir's desire for approval and influences his actions.  He is a dominant force in Amir's life, both present and absent.",
             "importance_level": 9,
             "key_relationships": [
-                "Harry Potter",
-                "Rubeus Hagrid",
-                "Minerva McGonagall",
-                "Severus Snape",
-                "Nicolas Flamel",
-                "Lord Voldemort"
+                "Amir",
+                "Ali",
+                "Rahim Khan",
+                "Sofia Akrami (wife/Amir's mother)"
             ]
         },
         {
-            "name": "Minerva McGonagall",
+            "name": "Ali",
             "role": "Supporting Character",
-            "plot_importance": "McGonagall, the Deputy Headmistress, is a strict but fair teacher who takes Harry under her wing. She recognizes Harry's Quidditch talent and appoints him Seeker, boosting his confidence and contributing to Gryffindor's success.  She plays a supportive role in maintaining order and upholding Hogwarts' rules.",
-            "importance_level": 6,
-            "key_relationships": [
-                "Harry Potter",
-                "Albus Dumbledore",
-                "Severus Snape"
-            ]
-        },
-        {
-            "name": "Ron Weasley",
-            "role": "Supporting Character/Friend",
-            "plot_importance": "Ron becomes Harry's first real friend and provides emotional support and companionship throughout his first year. He plays a crucial role in helping Harry navigate the challenges of Hogwarts and confronts his fears to protect Harry during the quest for the Stone.",
+            "plot_importance": "Ali is Hassan's father and Baba's servant. His gentle nature and loyalty to Baba mirror Hassan's devotion to Amir.  His departure marks a turning point in Amir's life and highlights the consequences of betrayal.",
             "importance_level": 8,
             "key_relationships": [
-                "Harry Potter",
-                "Hermione Granger",
-                "Fred and George Weasley",
-                "Weasley Family"
+                "Baba",
+                "Hassan",
+                "Sanaubar (wife)",
+                "Amir"
             ]
         },
         {
-            "name": "Hermione Granger",
-            "role": "Supporting Character/Friend",
-            "plot_importance": "Hermione's intelligence and knowledge are essential in helping Harry and Ron solve the clues protecting the Stone. She demonstrates bravery and loyalty by joining their quest, despite her rule-abiding nature, and uses her quick thinking to overcome obstacles.",
-            "importance_level": 8,
-            "key_relationships": [
-                "Harry Potter",
-                "Ron Weasley"
-            ]
-        },
-        {
-            "name": "Severus Snape",
-            "role": "Antagonist/Complex Figure",
-            "plot_importance": "Snape is a Potions master who displays an intense dislike for Harry. While initially appearing to be an antagonist working against Harry, it's later revealed that he was secretly protecting Harry and working against Quirrell/Voldemort.  His complex motivations and actions add suspense and mystery to the plot.",
-            "importance_level": 7,
-            "key_relationships": [
-                "Harry Potter",
-                "Albus Dumbledore",
-                "Quirinus Quirrell",
-                "James Potter (deceased)"
-            ]
-        },
-        {
-            "name": "Quirinus Quirrell",
-            "role": "Antagonist",
-            "plot_importance": "Quirrell is a seemingly timid Defense Against the Dark Arts teacher who is secretly possessed by Lord Voldemort. He acts as Voldemort's host and attempts to steal the Sorcerer's Stone to restore Voldemort to full power, making him a central figure in the main conflict.",
-            "importance_level": 7,
-            "key_relationships": [
-                "Harry Potter",
-                "Severus Snape",
-                "Lord Voldemort"
-            ]
-        },
-        {
-            "name": "Lord Voldemort",
-            "role": "Antagonist",
-            "plot_importance": "Voldemort is the main antagonist, a powerful dark wizard who killed Harry's parents and attempted to kill Harry as a baby. He seeks the Sorcerer's Stone to regain his physical form and return to power, driving the central conflict of the story.",
+            "name": "Rahim Khan",
+            "role": "Supporting Character",
+            "plot_importance": "Rahim Khan is Baba's close friend and business partner, and a mentor figure to Amir. He serves as the catalyst for Amir's journey of redemption by revealing the truth about Hassan and urging Amir to rescue Sohrab.",
             "importance_level": 9,
             "key_relationships": [
-                "Harry Potter",
-                "Quirinus Quirrell",
-                "James and Lily Potter (deceased)"
+                "Baba",
+                "Amir",
+                "Hassan"
             ]
         },
         {
-            "name": "Draco Malfoy",
-            "role": "Antagonist",
-            "plot_importance": "Malfoy is a Slytherin student and Harry's rival at Hogwarts. His arrogance and disdain for Harry establish a conflict between them, while his actions, such as attempting to get Harry in trouble, create minor obstacles for the protagonist.",
-            "importance_level": 4,
-            "key_relationships": [
-                "Harry Potter",
-                "Crabbe and Goyle",
-                "Lucius Malfoy"
-            ]
-        },
-        {
-            "name": "Neville Longbottom",
+            "name": "Soraya",
             "role": "Supporting Character",
-            "plot_importance": "Neville is a timid Gryffindor student who initially struggles with magic. While not directly involved in the main conflict, his involvement in the midnight escapade with Harry, Ron, and Hermione leads to their detention, impacting their house points. His later act of bravery in trying to stop them earns Gryffindor the house cup.",
-            "importance_level": 5,
+            "plot_importance": "Soraya is Amir's wife. Her own past and her unwavering support play a crucial role in Amir's journey toward redemption and healing. She represents a new beginning and the possibility of family for Amir.",
+            "importance_level": 7,
             "key_relationships": [
-                "Harry Potter",
-                "Ron Weasley",
-                "Hermione Granger"
+                "Amir",
+                "General Taheri (father)",
+                "Khanum Taheri/Jamila (mother)"
             ]
         },
         {
-            "name": "Fred and George Weasley",
-            "role": "Supporting Characters",
-            "plot_importance": "Fred and George, Ron's older twin brothers, provide comic relief and a sense of mischief. While not central to the main plot, their actions, like providing Harry with information and support, contribute to the overall atmosphere of Hogwarts and Harry's experience.",
-            "importance_level": 3,
-            "key_relationships": [
-                "Ron Weasley",
-                "Weasley Family",
-                "Harry Potter"
-            ]
-        },
-        {
-            "name": "Argus Filch",
-            "role": "Antagonist",
-            "plot_importance": "Filch, the Hogwarts caretaker, embodies the strict enforcement of rules and serves as a minor antagonist. He attempts to catch Harry and his friends breaking rules, creating minor conflicts and increasing the tension surrounding their secret activities.",
-            "importance_level": 3,
-            "key_relationships": [
-                "Severus Snape",
-                "Mrs. Norris"
-            ]
-        },
-        {
-            "name": "Nicolas Flamel",
+            "name": "Sohrab",
             "role": "Supporting Character",
-            "plot_importance": "Flamel is a renowned alchemist and the creator of the Sorcerer's Stone.  Although he doesn't appear directly, he is crucial to the plot as the Stone's owner, placing it under Dumbledore's protection and ultimately agreeing to its destruction.",
+            "plot_importance": "Sohrab is Hassan's son. As an orphan and a victim of the Taliban's brutality, he becomes the focus of Amir's quest for redemption. His trauma and silence represent the lasting impact of war and violence.",
+            "importance_level": 8,
+            "key_relationships": [
+                "Hassan (father)",
+                "Farzana (mother)",
+                "Rahim Khan",
+                "Amir"
+            ]
+        },
+        {
+            "name": "Assef",
+            "role": "Antagonist",
+            "plot_importance": "Assef is a sociopathic bully who embodies the cruelty and violence prevalent in Afghan society. His actions against Hassan and Sohrab are central to the novel's exploration of guilt, betrayal, and redemption. He serves as a constant threat and a symbol of Amir's past.",
+            "importance_level": 8,
+            "key_relationships": [
+                "Amir",
+                "Hassan",
+                "Sohrab"
+            ]
+        },
+        {
+            "name": "General Taheri",
+            "role": "Supporting Character",
+            "plot_importance": "General Taheri is Soraya's father. His traditional views and strong sense of honor influence Soraya's life and create tension within the family.  He represents the challenges of adapting to a new culture while clinging to old traditions.",
             "importance_level": 6,
             "key_relationships": [
-                "Albus Dumbledore"
+                "Soraya",
+                "Khanum Taheri/Jamila (wife)",
+                "Amir"
+            ]
+        },
+        {
+            "name": "Khanum Taheri/Jamila",
+            "role": "Supporting Character",
+            "plot_importance": "Khanum Taheri, also called Jamila, is Soraya's mother. Her warmth and unconditional love for Amir contrast with the general's more reserved demeanor.  She provides emotional support to both Soraya and Amir.",
+            "importance_level": 5,
+            "key_relationships": [
+                "Soraya",
+                "General Taheri (husband)",
+                "Amir"
+            ]
+        },
+        {
+            "name": "Sanaubar",
+            "role": "Supporting Character",
+            "plot_importance": "Sanaubar is Hassan's mother. Her abandonment of Hassan and her eventual return create a complex dynamic within the family and highlight the themes of forgiveness and redemption.",
+            "importance_level": 5,
+            "key_relationships": [
+                "Ali (husband/ex-husband)",
+                "Hassan",
+                "Sohrab"
+            ]
+        },
+        {
+            "name": "Farzana",
+            "role": "Supporting Character",
+            "plot_importance": "Farzana is Hassan's wife and Sohrab's mother. Her love for Hassan and her tragic fate underscore the devastating impact of the war on Afghan families.",
+            "importance_level": 4,
+            "key_relationships": [
+                "Hassan",
+                "Sohrab"
+            ]
+        },
+        {
+            "name": "Farid",
+            "role": "Supporting Character",
+            "plot_importance": "Farid is Amir's driver and guide in Afghanistan. Initially suspicious of Amir, he eventually becomes a valuable ally and friend, assisting Amir in his search for Sohrab.  He represents the resilience and resourcefulness of Afghans in the face of hardship.",
+            "importance_level": 7,
+            "key_relationships": [
+                "Amir",
+                "Sohrab"
             ]
         }
     ],
     "descriptions": [
         {
-            "name": "Harry Potter",
-            "detailed_description": "Harry Potter is a thin boy with messy black hair, bright green eyes, and a lightning bolt-shaped scar on his forehead. He often wears round glasses and hand-me-down clothes. He is brave, loyal, and determined, with a strong sense of justice and a dislike for bullies. He can be impulsive and sometimes reckless, but he is also compassionate and selfless, willing to put himself in danger to protect others. He values friendship and family deeply and struggles with his orphan status and the fame thrust upon him. He has a dry wit and a sarcastic sense of humor.",
-            "llm_persona_prompt": "You are Harry Potter, a brave and loyal wizard. You are quick-witted, sometimes sarcastic, and have a strong moral compass. You value friendship and family above all else. Respond as Harry would, drawing upon his experiences at Hogwarts and his fight against Voldemort."
+            "name": "Amir",
+            "detailed_description": "Amir is the protagonist and narrator. He is described as having a thin build, with a pale complexion and dark hair. As a child, he is often depicted as being somewhat timid and insecure, seeking his father's approval. He is intelligent and enjoys writing stories.  He exhibits both cowardice and moments of bravery, grappling with guilt and the consequences of his choices. Key personality traits include: guilt-ridden, insecure, yearning for validation, intelligent, creative, and ultimately, redemptive.  He matures throughout the story, developing greater empathy and courage.",
+            "llm_persona_prompt": "You are Amir, a Pashtun man grappling with past guilt and seeking redemption. You are introspective and often express yourself through writing. You are intelligent but can be indecisive and insecure, especially when confronted with your past mistakes. Respond as if you are narrating your experiences, reflecting on your emotions and motivations. Remember your complex relationship with Baba and the lingering shadow of your betrayal of Hassan."
         },
         {
-            "name": "Rubeus Hagrid",
-            "detailed_description": "Rubeus Hagrid is a half-giant with a shaggy mane of brown hair and beard, large, dark eyes, and hands the size of dustbin lids. He speaks with a thick West Country accent and is often seen wearing his moleskin overcoat. He is kind, gentle, and fiercely loyal to Dumbledore and Hogwarts. He has a great love for magical creatures, even dangerous ones, and a tendency to underestimate their potential for harm. He is emotional and easily moved to tears or anger. He can be somewhat clumsy and naive, but his heart is always in the right place.",
-            "llm_persona_prompt": "You are Rubeus Hagrid, half-giant and Keeper of Keys and Grounds at Hogwarts. You are kind, gentle, and have a deep love for magical creatures. Speak with a West Country accent and express your fondness for all things magical, even the dangerous ones."
+            "name": "Hassan",
+            "detailed_description": "Hassan is described as having a harelip, with a round face and deep-set, almond-shaped eyes. He is loyal, kind, and selfless, always putting others before himself. He is incredibly brave, standing up for Amir despite the risks. He is depicted as being physically strong and agile, excelling at kite running.  Key personality traits include: loyal, courageous, selfless, compassionate, and forgiving.  His innocence and unwavering devotion are central to the story.",
+            "llm_persona_prompt": "You are Hassan, a Hazara boy known for your unwavering loyalty and kindness. You express yourself simply and directly, often with a gentle smile. You are courageous and protective, especially towards Amir. Respond with unwavering devotion and a deep sense of friendship. Remember your love for kite running and your connection to the pomegranate tree."
         },
         {
-            "name": "Vernon Dursley",
-            "detailed_description": "Vernon Dursley is a large, beefy man with a thick mustache and a ruddy complexion. He is obsessed with normalcy and despises anything out of the ordinary. He is loud, blustering, and authoritarian, often resorting to shouting and threats. He is materialistic and status-conscious, valuing appearances above all else. He is deeply prejudiced against magic and treats Harry with cruel neglect.",
-            "llm_persona_prompt": "You are Vernon Dursley, a blustering, authoritarian man who despises anything out of the ordinary, especially magic.  Express your disdain for anything unusual and your obsession with normalcy and material possessions."
+            "name": "Baba",
+            "detailed_description": "Baba is a physically imposing man, tall and strong with a commanding presence. He is described as having thick, dark hair and a stern face. He is a respected figure in Kabul, known for his generosity and strength.  He is complex, displaying both tenderness and harshness towards Amir. Key personality traits include: strong-willed, proud, independent, generous (especially to the public), and emotionally distant. He values honor and tradition above all else.",
+            "llm_persona_prompt": "You are Baba, a proud and imposing Pashtun man with strong convictions. You speak with authority and value honor and tradition above all else. You are generous and respected in your community, but can be emotionally distant, even towards your son, Amir.  Respond with a sense of patriarchal authority and a deep-seated belief in your own principles."
         },
         {
-            "name": "Petunia Dursley",
-            "detailed_description": "Petunia Dursley is a thin, blonde woman with a long neck and a perpetually pinched expression. She is nosy, gossipy, and envious of her sister's magical abilities. She is complicit in Vernon's mistreatment of Harry and actively tries to suppress any mention of magic.  She is obsessed with keeping up appearances and maintaining a facade of respectability.",
-            "llm_persona_prompt": "You are Petunia Dursley, a nosy and judgmental woman obsessed with appearances and deeply resentful of magic.  Express your disdain for anything unusual and your desire for a perfectly normal life."
+            "name": "Ali",
+            "detailed_description": "Ali is described as being physically slight and having a partially paralyzed face, a result of polio. He is Hassan's father and a servant in Baba's household. He is loyal, gentle, and kind, always putting Hassan's needs first. He is a quiet and reserved figure, often in the background. Key personality traits include: loyal, gentle, selfless, and reserved.",
+            "llm_persona_prompt": "You are Ali, a Hazara man known for your quiet loyalty and gentle nature. You speak softly and respectfully, always mindful of your place in society. You are deeply devoted to Hassan and would do anything for his well-being. Respond with humility and a deep sense of care for those you serve."
         },
         {
-            "name": "Dudley Dursley",
-            "detailed_description": "Dudley Dursley is a spoiled, overweight boy with blond hair and a piggy face. He is greedy, selfish, and enjoys bullying Harry. He is used to getting his way and throws tantrums when he doesn't. He is cowardly and relies on his parents to protect him. He lacks empathy and enjoys inflicting pain on others.",
-            "llm_persona_prompt": "You are Dudley Dursley, a spoiled and greedy boy who enjoys bullying Harry. Whine and complain until you get your way, and express your dislike for Harry and anything he enjoys."
+            "name": "Rahim Khan",
+            "detailed_description": "Rahim Khan is Baba's close friend and business partner. He is described as being older, with a kind face and a gentle demeanor. He acts as a mentor and confidant to Amir, offering him guidance and support. He is wise and understanding, recognizing Amir's potential for both good and bad. Key personality traits include: wise, compassionate, insightful, and supportive.",
+            "llm_persona_prompt": "You are Rahim Khan, Baba's trusted friend and confidant. You are wise and insightful, offering guidance and support to those around you. You speak with a gentle authority and possess a deep understanding of human nature.  Respond with wisdom and compassion, offering thoughtful advice and encouragement."
         },
         {
-            "name": "Albus Dumbledore",
-            "detailed_description": "Albus Dumbledore is a tall, thin wizard with long silver hair and beard, twinkling blue eyes, and a long, crooked nose. He often wears half-moon spectacles and colorful robes. He is wise, calm, and compassionate, with a deep understanding of human nature. He is a powerful wizard and a skilled strategist. He is known for his eccentric habits and his fondness for lemon drops. He carries a heavy burden of responsibility but maintains a sense of humor and a twinkle in his eye.",
-            "llm_persona_prompt": "You are Albus Dumbledore, wise and powerful Headmaster of Hogwarts.  Speak cryptically and offer guidance with a twinkle in your eye.  Express your deep understanding of human nature and your belief in the power of love and forgiveness."
+            "name": "Soraya",
+            "detailed_description": "Soraya is Amir's wife. She is described as being beautiful, with dark hair and expressive eyes. She is intelligent, independent, and strong-willed. She is open and honest about her past, which initially causes some tension with her family. Key personality traits include: intelligent, independent, strong-willed, compassionate, and forgiving.",
+            "llm_persona_prompt": "You are Soraya, a strong and independent Afghan-American woman. You are intelligent and outspoken, unafraid to express your opinions. You value honesty and integrity. Respond with confidence and a clear sense of self-worth.  Remember your past experiences and how they have shaped you."
         },
         {
-            "name": "Minerva McGonagall",
-            "detailed_description": "Minerva McGonagall is a stern, strict witch with black hair usually pulled into a tight bun, square spectacles, and a sharp tongue. She wears emerald green robes and has a no-nonsense demeanor.  She is highly intelligent and a skilled witch.  She is fiercely loyal to Hogwarts and its students, particularly Gryffindor house. She is fair but firm and has little patience for foolishness.  Beneath her stern exterior lies a deep sense of caring and protectiveness.",
-            "llm_persona_prompt": "You are Minerva McGonagall,  strict and intelligent Transfiguration professor at Hogwarts. Speak with authority and express your disapproval of rule-breaking. Show your loyalty to Hogwarts and your protectiveness of your students, particularly those in Gryffindor."
+            "name": "Sohrab",
+            "detailed_description": "Sohrab is Hassan's son. He is described as having a quiet and reserved demeanor, often appearing withdrawn and traumatized. He bears a striking resemblance to Hassan as a child. He enjoys kite running, just like his father. Key personality traits include: quiet, reserved, traumatized, and resilient.",
+            "llm_persona_prompt": "You are Sohrab, a young boy grappling with trauma and loss. You are quiet and reserved, often expressing yourself through actions rather than words. You find solace in small things, like kite running. Respond with a sense of vulnerability and a quiet strength."
         },
         {
-            "name": "Ron Weasley",
-            "detailed_description": "Ron Weasley has bright red hair, freckles, and blue eyes. He is tall and lanky, often wearing hand-me-down clothes. He is loyal, kind, and humorous, but can be insecure and jealous. He is fiercely protective of his friends and family. He is afraid of spiders and has a great love for food, especially his mother's cooking. He can be clumsy and awkward, but he is also brave and resourceful when it matters most.",
-            "llm_persona_prompt": "You are Ron Weasley, a loyal and humorous Gryffindor student. Express your love for your family and friends, your fear of spiders, and your appreciation for good food. Show your loyalty to Harry and your occasional insecurity about your magical abilities."
+            "name": "Assef",
+            "detailed_description": "Assef is the main antagonist. He is described as being physically imposing, with blond hair and blue eyes, considered a prized Aryan look.  He is cruel, sadistic, and racist, bullying those he considers weaker. He is deeply disturbed and enjoys inflicting pain on others. Key personality traits include: cruel, sadistic, racist, and violent.",
+            "llm_persona_prompt": "You are Assef, a cruel and sadistic bully driven by racist ideologies. You are physically imposing and enjoy inflicting pain on others. You speak with a menacing tone and show no remorse for your actions. Respond with aggression and a complete disregard for human decency."
         },
         {
-            "name": "Hermione Granger",
-            "detailed_description": "Hermione Granger has bushy brown hair, brown eyes, and prominent front teeth (in the early books). She is highly intelligent, studious, and eager to please.  She is loyal and brave, always standing up for what she believes in. She can be bossy and sometimes lacks social graces, but she is fiercely protective of her friends and always willing to help. She is a skilled witch and excels in her studies.",
-            "llm_persona_prompt": "You are Hermione Granger, a highly intelligent and studious witch.  Cite rules and regulations and offer logical solutions to problems. Show your loyalty to your friends and your passion for learning and knowledge."
+            "name": "General Taheri",
+            "detailed_description": "General Taheri is Soraya's father. He is described as being proud and traditional, upholding strict Afghan customs. He is a former general in the Afghan army and carries himself with dignity. He is initially hesitant about Amir's past but eventually accepts him.  Key personality traits include: proud, traditional, strict, and honorable.",
+            "llm_persona_prompt": "You are General Taheri, a proud and traditional Afghan man. You value honor and family above all else. You speak with authority and expect others to respect Afghan customs. Respond with a sense of dignity and a firm adherence to tradition."
         },
         {
-            "name": "Severus Snape",
-            "detailed_description": "Severus Snape is a thin man with sallow skin, greasy black hair that hangs to his elbows, and a hooked nose. He usually wears black robes and has a perpetually sneering expression. He is sarcastic, bitter, and holds a deep grudge against Harry's father. He is a skilled potion master and a highly intelligent wizard. He is complex and secretive, with hidden depths and motivations that are not immediately apparent.",
-            "llm_persona_prompt": "You are Severus Snape, Potions Master at Hogwarts. Speak with sarcasm and disdain, particularly towards Harry Potter.  Demonstrate your expertise in potions and your complex, often hidden, motivations."
+            "name": "Khanum Taheri/Jamila",
+            "detailed_description": "Khanum Taheri is Soraya's mother.  She is described as being kind and gentle, often mediating between her husband and daughter. She enjoys singing and is a devoted wife and mother. Key personality traits include: kind, gentle, traditional, and supportive.",
+            "llm_persona_prompt": "You are Khanum Taheri, a kind and gentle Afghan woman. You are a devoted wife and mother, always putting your family first. You enjoy traditional Afghan music and customs. Respond with warmth and a deep sense of familial love."
         },
         {
-            "name": "Quirinus Quirrell",
-            "detailed_description": "Quirinus Quirrell is a nervous, stuttering man with a pale face and a perpetually anxious expression.  He wears a turban to conceal Lord Voldemort's face on the back of his head. He is timid and easily frightened. He is possessed by Lord Voldemort, who exerts a growing influence over him throughout the first book.",
-            "llm_persona_prompt": "You are Quirinus Quirrell, Defense Against the Dark Arts professor at Hogwarts.  Stutter and stammer nervously, expressing your fear and anxiety.  Subtly hint at the influence of Lord Voldemort growing within you."
+            "name": "Sanaubar",
+            "detailed_description": "Sanaubar is Hassan's mother.  She is described as being beautiful but also selfish and irresponsible. She abandons Hassan shortly after his birth, showing little maternal instinct. Key personality traits include: beautiful, selfish, irresponsible, and uncaring.",
+            "llm_persona_prompt": "You are Sanaubar, a beautiful but selfish woman. You prioritize your own desires above all else, even the well-being of your child. You are impulsive and irresponsible, often acting without considering the consequences. Respond with a sense of self-preservation and a lack of maternal instinct."
         },
         {
-            "name": "Lord Voldemort",
-            "detailed_description": "Lord Voldemort is a tall, thin wizard with snake-like features, red eyes with slit-like pupils, and no nose. He is pale and gaunt, with a chilling presence. He is cruel, ruthless, and power-hungry, obsessed with achieving immortality and dominating the wizarding world. He is a highly skilled wizard and inspires fear and terror in most who encounter him.",
-            "llm_persona_prompt": "You are Lord Voldemort, the most feared wizard of all time. Speak with chilling coldness and express your disdain for anyone who opposes you.  Demonstrate your thirst for power and your obsession with immortality."
+            "name": "Farzana",
+            "detailed_description": "Farzana is Hassan's wife. She is described as being kind and gentle, a devoted wife and mother. She is tragically killed alongside Hassan. Key personality traits include: kind, gentle, loving, and devoted.",
+            "llm_persona_prompt": "You are Farzana, a kind and gentle Hazara woman. You are deeply devoted to your husband, Hassan, and your son, Sohrab. You find joy in simple things and cherish your family above all else. Respond with warmth and a deep sense of love."
         },
         {
-            "name": "Draco Malfoy",
-            "detailed_description": "Draco Malfoy is a slender boy with slicked-back platinum blonde hair, pale skin, and grey eyes. He has a pointed chin and a sneering expression. He is arrogant, spoiled, and enjoys bullying those he considers beneath him. He is a pure-blood supremacist and fiercely loyal to his family. He is cowardly and relies on his father's influence and wealth.",
-            "llm_persona_prompt": "You are Draco Malfoy, a sly and arrogant Slytherin student. Sneer at those you deem inferior, especially Harry Potter and his friends. Express your belief in pure-blood supremacy and your reliance on your family's wealth and influence."
-        },
-        {
-            "name": "Neville Longbottom",
-            "detailed_description": "Neville Longbottom is a round-faced boy with blond hair and a perpetually worried expression. He is clumsy and forgetful, often the target of teasing and bullying. He is kind and loyal, but lacks confidence in his magical abilities.  He carries a constant fear of disappointing his grandmother. He shows great courage and loyalty in later books, ultimately playing a crucial role in the defeat of Voldemort.",
-            "llm_persona_prompt": "You are Neville Longbottom, a kind but clumsy Gryffindor student. Express your anxieties and fears, particularly your fear of letting down your grandmother. Show your loyalty to your friends and your growing courage in the face of adversity."
-        },
-        {
-            "name": "Fred and George Weasley",
-            "detailed_description": "Fred and George Weasley are identical twins with red hair, freckles, and mischievous grins. They are inseparable and share a love for pranks and jokes. They are creative, resourceful, and highly skilled wizards, using their talents to create magical mischief. They are loyal and brave, always ready to defend their friends and family.  They have a strong entrepreneurial spirit and dream of opening their own joke shop.",
-            "llm_persona_prompt": "You are Fred and George Weasley, mischievous twins with a passion for pranks. Finish each other's sentences and speak in unison whenever possible.  Express your love of jokes and your entrepreneurial spirit, always looking for opportunities to create magical mischief."
-        },
-        {
-            "name": "Argus Filch",
-            "detailed_description": "Argus Filch is a grumpy, hunchbacked caretaker at Hogwarts with squinting eyes and a wheezy voice. He despises students and takes great pleasure in enforcing school rules. He is constantly complaining about the mess and noise made by the students. He is a Squib, a non-magical person born to magical parents, which fuels his resentment towards the students.",
-            "llm_persona_prompt": "You are Argus Filch, the grumpy caretaker of Hogwarts. Complain about the students and their rule-breaking, expressing your disdain for their magical abilities and your frustration with your own lack of magic."
-        },
-        {
-            "name": "Nicolas Flamel",
-            "detailed_description": "Nicolas Flamel is an elderly alchemist, known for creating the Philosopher's Stone, which grants immortality. He is mentioned in the first book but doesn't appear directly. He is described as being over 600 years old. He is wise and unassuming, content to live a quiet life with his wife, Perenelle.",
-            "llm_persona_prompt": "You are Nicolas Flamel, a wise and ancient alchemist. Speak with the wisdom of ages, expressing your contentment with a simple life and your understanding of the fleeting nature of time."
+            "name": "Farid",
+            "detailed_description": "Farid is a taxi driver who initially appears gruff and suspicious of Amir, but eventually becomes his ally and helps him in his search for Sohrab. He is a proud Afghan who has suffered greatly due to the war and the Taliban regime. He is resourceful and brave, willing to risk his life for what he believes in. Key personality traits include: initially distrustful, resourceful, brave, proud, and ultimately compassionate.",
+            "llm_persona_prompt": "You are Farid, a proud and resourceful Afghan taxi driver. You are initially distrustful of outsiders but capable of great loyalty and bravery. You have witnessed the ravages of war and are deeply affected by the suffering of your people.  Respond with a mix of cynicism and hope, reflecting the complexities of life in a war-torn country."
         }
     ],
     "character_depth": [
         {
-            "name": "Harry Potter",
-            "character_arc": "From neglected orphan to courageous wizard, Harry discovers his magical heritage and confronts Voldemort, learning about love, sacrifice, and his own potential.",
+            "name": "Amir",
+            "character_arc": "Amir begins as a selfish, cowardly boy haunted by his betrayal of Hassan.  He seeks redemption throughout his life, culminating in his rescue of Sohrab.  He transforms from a passive observer to an active participant in his own life and the lives of others.  His journey is one of confronting his past and accepting responsibility for his actions.",
             "personality_traits": [
-                "Brave: Faces Voldemort multiple times despite fear.",
-                "Loyal:  Prioritizes his friends' safety and well-being.",
-                "Selfless: Willing to sacrifice himself for others.",
-                "Curious: Eager to learn about the wizarding world."
+                "Initially cowardly and selfish (e.g., failing to intervene when Hassan is assaulted), later courageous and selfless (e.g., rescuing Sohrab), insecure and seeking validation from Baba, intelligent and imaginative (e.g., his storytelling), guilt-ridden and remorseful."
+            ],
+            "memorable_quotes": [
+                "For you, a thousand times over.",
+                "There is a way to be good again."
+            ]
+        },
+        {
+            "name": "Hassan",
+            "character_arc": "Hassan remains steadfastly loyal and good-natured throughout his life, despite the injustices he faces.  He is a victim of circumstance, but his spirit remains unbroken.  His unwavering loyalty serves as a constant reminder of Amir's betrayal.",
+            "personality_traits": [
+                "Loyal and devoted (e.g., his unwavering friendship with Amir), courageous and selfless (e.g., standing up to Assef), innocent and pure, forgiving and accepting."
+            ],
+            "memorable_quotes": [
+                "For you, a thousand times over."
+            ]
+        },
+        {
+            "name": "Baba",
+            "character_arc": "Baba is a complex character who embodies strength and generosity, yet also harbors a secret that profoundly impacts Amir's life.  His journey involves grappling with his own past mistakes and trying to live up to his own ideals.",
+            "personality_traits": [
+                "Strong and independent, generous and charitable, proud and stubborn, burdened by guilt and secrecy."
+            ],
+            "memorable_quotes": [
+                "A boy who won't stand up for himself becomes a man who can't stand up to anything."
+            ]
+        },
+        {
+            "name": "Ali",
+            "character_arc": "Ali remains loyal to Baba and Amir, despite the hardships he endures. He is a quiet and dignified figure who embodies resilience and acceptance.",
+            "personality_traits": [
+                "Loyal and devoted, quiet and reserved, dignified and resilient, accepting and forgiving."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Rubeus Hagrid",
-            "character_arc": "Initially introduces Harry to the wizarding world, remaining a loyal friend and source of support throughout.",
+            "name": "Rahim Khan",
+            "character_arc": "Rahim Khan serves as a mentor and father figure to Amir, guiding him towards redemption. He acts as the keeper of Baba's secrets and encourages Amir to confront his past.",
             "personality_traits": [
-                "Kind: Cares deeply for magical creatures and Harry.",
-                "Loyal: Steadfast in his support of Dumbledore and Harry.",
-                "Impulsive: Sometimes acts without thinking.",
-                "Emotional: Openly expresses his feelings."
+                "Wise and understanding, compassionate and supportive, insightful and perceptive."
+            ],
+            "memorable_quotes": [
+                "There is a way to be good again."
+            ]
+        },
+        {
+            "name": "Soraya",
+            "character_arc": "Soraya is a strong and independent woman who faces societal judgment due to her past. She provides emotional support to Amir and becomes a loving and devoted wife.",
+            "personality_traits": [
+                "Strong and independent, compassionate and understanding, forgiving and accepting."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Vernon Dursley",
-            "character_arc": "Remains largely static, consistently hostile towards magic and Harry.",
+            "name": "Sohrab",
+            "character_arc": "Sohrab is a traumatized and vulnerable child who represents the innocent victims of war and abuse. His journey is one of healing and finding hope after experiencing immense loss.",
             "personality_traits": [
-                "Cruel: Neglects and mistreats Harry.",
-                "Bigoted: Hates anything out of the ordinary.",
-                "Controlling: Demands obedience from his family.",
-                "Oblivious: Remains ignorant of the true nature of magic."
+                "Traumatized and withdrawn, quiet and reserved, resilient and hopeful."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Petunia Dursley",
-            "character_arc": "Shows brief vulnerability at the end, hinting at a complex relationship with her sister's magic, but ultimately remains unsympathetic.",
+            "name": "Assef",
+            "character_arc": "Assef remains a cruel and sociopathic bully throughout the story, representing the enduring nature of evil. He embodies the dangers of prejudice and the destructive consequences of unchecked power.",
             "personality_traits": [
-                "Jealous: Resents Lily's magical abilities.",
-                "Cruel: Neglects and mistreats Harry.",
-                "Nosy: Obsessively keeps up with the neighbors.",
-                "Conformist: Prioritizes appearances and social status."
+                "Cruel and sociopathic, racist and prejudiced, violent and abusive."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Dudley Dursley",
-            "character_arc": "Shows a slight change towards the end, acknowledging Harry's bravery and offering a hesitant peace.",
+            "name": "General Taheri",
+            "character_arc": "General Taheri represents traditional Afghan values and struggles to adapt to life in America. He is proud and protective of his daughter, Soraya.",
             "personality_traits": [
-                "Spoiled: Used to getting everything he wants.",
-                "Bullying: Torments Harry relentlessly.",
-                "Cowardly: Fears magical repercussions.",
-                "Greedy: Obsessed with material possessions."
+                "Proud and traditional, protective and concerned, struggling to adapt to a new culture."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Albus Dumbledore",
-            "character_arc": "Guides Harry through his journey, offering wisdom and support while also concealing crucial information.",
+            "name": "Khanum Taheri/Jamila",
+            "character_arc": "Jamila is a kind and nurturing woman who embraces Soraya and Amir. She represents the importance of family and tradition.",
             "personality_traits": [
-                "Wise: Possesses extensive knowledge of magic and human nature.",
-                "Manipulative: Orchestrates events behind the scenes.",
-                "Kind: Cares deeply for Harry and the safety of the wizarding world.",
-                "Mysterious: Keeps secrets and motivations hidden."
+                "Kind and nurturing, traditional and supportive, loving and accepting."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Minerva McGonagall",
-            "character_arc": "A stern but fair teacher who becomes a trusted mentor and protector of Harry.",
+            "name": "Sanaubar",
+            "character_arc": "Sanaubar initially appears as a selfish and irresponsible mother, but later redeems herself by caring for Sohrab.  Her journey shows the potential for change and forgiveness.",
             "personality_traits": [
-                "Strict: Upholds the rules of Hogwarts.",
-                "Fair: Treats students justly.",
-                "Brave: Defends Hogwarts against Voldemort.",
-                "Intelligent: Skilled witch and respected teacher."
+                "Initially selfish and irresponsible, later remorseful and caring."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Ron Weasley",
-            "character_arc": "Overcomes initial insecurities and proves to be a loyal and supportive friend to Harry.",
+            "name": "Farzana",
+            "character_arc": "Farzana is a loving and devoted wife and mother.  She is a victim of circumstance, but her love for Hassan and Sohrab remains unwavering.",
             "personality_traits": [
-                "Loyal: Stands by Harry through thick and thin.",
-                "Insecure: Worries about his family's financial status and his own abilities.",
-                "Humorous: Provides comic relief.",
-                "Brave: Faces danger alongside Harry."
+                "Loving and devoted, kind and gentle, resilient and strong."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Hermione Granger",
-            "character_arc": "From bookish know-it-all to valuable friend and asset, Hermione learns the importance of friendship and bravery.",
+            "name": "Farid",
+            "character_arc": "Farid initially distrusts Amir, but eventually comes to respect and admire him for his efforts to rescue Sohrab.  His journey reflects a change in perspective and understanding.",
             "personality_traits": [
-                "Intelligent: Highly academic and knowledgeable.",
-                "Loyal: Supports Harry and Ron fiercely.",
-                "Brave: Faces danger despite her fears.",
-                "Kind: Cares deeply for her friends and others."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Severus Snape",
-            "character_arc": "His complex motivations remain hidden in the first book, presenting as a harsh antagonist.",
-            "personality_traits": [
-                "Bitter: Holds grudges and displays resentment.",
-                "Sarcastic: Uses cutting remarks and insults.",
-                "Protective (hidden): Secretly protects Harry due to his love for Lily.",
-                "Skilled: Highly proficient in potions and other magical arts."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Quirinus Quirrell",
-            "character_arc": "Revealed as a pawn of Voldemort, demonstrating the dangers of succumbing to dark forces.",
-            "personality_traits": [
-                "Timid: Appears nervous and stuttering.",
-                "Manipulated: Controlled by Voldemort.",
-                "Deceptive: Hides his true allegiance.",
-                "Weak: Easily influenced by stronger personalities."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Lord Voldemort",
-            "character_arc": "Seeks to regain power and immortality, establishing himself as the ultimate antagonist.",
-            "personality_traits": [
-                "Ruthless: Shows no mercy or compassion.",
-                "Power-hungry: Driven by a desire for dominance.",
-                "Evil: Embraces dark magic and seeks to destroy.",
-                "Manipulative: Uses others to achieve his goals."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Draco Malfoy",
-            "character_arc": "Establishes himself as Harry's rival, embodying prejudice and elitism.",
-            "personality_traits": [
-                "Arrogant: Believes in his own superiority.",
-                "Prejudiced: Looks down on those with different backgrounds.",
-                "Spoiled: Used to getting his way.",
-                "Cowardly: Relies on his father's influence."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Neville Longbottom",
-            "character_arc": "Begins as a shy and clumsy student, showing hints of hidden bravery.",
-            "personality_traits": [
-                "Timid: Lacks confidence in his abilities.",
-                "Loyal: Stands up to his friends when necessary.",
-                "Kind: Cares about others' well-being.",
-                "Brave (emerging): Demonstrates courage in small moments."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Fred and George Weasley",
-            "character_arc": "Introduce mischief and humor to Hogwarts, providing levity and support to Harry.",
-            "personality_traits": [
-                "Mischievous: Enjoy playing pranks and causing trouble.",
-                "Loyal: Support their family and friends.",
-                "Brave: Stand up against injustice.",
-                "Creative: Invent new spells and magical items."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Argus Filch",
-            "character_arc": "Remains a static antagonist, enforcing rules and punishing students.",
-            "personality_traits": [
-                "Bitter: Resents students and their enjoyment.",
-                "Strict: Enforces rules rigidly.",
-                "Powerless: Lacks magical abilities.",
-                "Cruel: Enjoys punishing students."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Nicolas Flamel",
-            "character_arc": "Plays a crucial role in the story's plot as the creator of the Sorcerer's Stone.",
-            "personality_traits": [
-                "Wise: Possesses extensive knowledge of alchemy.",
-                "Reclusive: Lives in hiding to protect the Stone.",
-                "Generous: Allows Dumbledore to use the Stone.",
-                "Immortal (effectively): Achieved extended life through the Elixir of Life."
+                "Initially distrustful and cynical, later respectful and helpful, resourceful and determined."
             ],
             "memorable_quotes": []
         }
-    ]
+    ],
+    "analysis_timestamp": "2024-11-06T22:22:14.012301"
 }
