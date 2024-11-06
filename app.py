@@ -152,7 +152,7 @@ def analyze_characters(book_text: str):
     model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.7)
 
     try:
-        with st.spinner("Finding all the characters in the story... 📚✨"):
+        with st.spinner("Finding all the characters in the story... This may take a few minutes... 📚✨"):
             first_pass = model.invoke(first_pass_prompt.format(book_text=book_text))
             basic_characters = basic_parser.parse(first_pass.content)
             st.success("Found some interesting characters! 🎭")
