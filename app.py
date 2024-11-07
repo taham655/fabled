@@ -160,13 +160,13 @@ def analyze_characters(book_text: str):
         character_list = [{"name": char.name, "role": char.role}
                          for char in basic_characters.characters]
 
-        with st.spinner("Getting to know their personalities and stories... 🤝💭"):
+        with st.spinner("Establishing a portal... 🤝💭"):
             second_pass = model.invoke(second_pass_prompt.format(
                 character_list=str(character_list)))
             character_descriptions = description_parser.parse(second_pass.content)
             st.success("The characters are taking shape! ✨")
 
-        with st.spinner("Uncovering their memorable moments and journeys... 📖💫"):
+        with st.spinner("bring the characters over... 📖💫"):
             third_pass = model.invoke(third_pass_prompt.format(
                 character_list=str(character_list)))
             try:
@@ -314,7 +314,7 @@ def main():
 
 
     if not st.session_state.analysis_complete:
-        st.subheader("Upload PDF for Analysis")
+        st.subheader("Upload PDF for fun to start :)")
         uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
         if uploaded_file is not None:
