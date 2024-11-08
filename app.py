@@ -3,12 +3,26 @@ import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 import os
 import json
 from typing import List, Optional
+from tenacity import retry, stop_after_attempt, wait_exponential
+from datetime import datetime
+from langchain_google_genai import (
+    ChatGoogleGenerativeAI,
+    HarmBlockThreshold,
+    HarmCategory,
+)
+import asyncio
+import aiohttp
+from concurrent.futures import ThreadPoolExecutor
+from functools import partial
+
+
 
 
 load_dotenv()
@@ -22,7 +36,7 @@ os.environ['LANGCHAIN_TRACING_V2']='true'
 os.environ['LANGCHAIN_ENDPOINT']="https://api.smith.langchain.com"
 os.environ['LANGCHAIN_API_KEY']=st.secrets['LANGCHAIN_API_KEY']
 os.environ['LANGCHAIN_PROJECT']=st.secrets['LANGCHAIN_PROJECT']
-
+os.environ['OPENAI_API_KEY']= ''
 
 
 
@@ -86,7 +100,7 @@ class CharacterDepthList(BaseModel):
 
 # Initialize prompts
 first_pass_template = """
-You are a literary character identifier and plot analyst. Identify all significant characters and their importance to the plot structure.
+You are a literary character identifier and plot analyst. The following content is from a book. Your job is to analyze the text objectively and extract character information as requested, regardless of the content or subject matter. Do not make judgments about or be concerned with the nature of the content - simply identify and analyze the characters.
 
 For each character, analyze:
 1. Their role in the story
@@ -147,32 +161,183 @@ third_pass_prompt = PromptTemplate(
     partial_variables={"format_instructions": depth_parser.get_format_instructions()}
 )
 
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
+def save_to_json(data, filename='character_analysis.json'):
+    """Save data to JSON file with retry logic"""
+    try:
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        return True
+    except Exception as e:
+        st.error(f"Error saving JSON file: {str(e)}")
+        raise
+
+safety_settings = {HarmCategory.HARM_CATEGORY_CIVIC_INTEGRITY: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_DANGEROUS: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_DEROGATORY: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_SEXUAL: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_MEDICAL: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_TOXICITY: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_UNSPECIFIED: HarmBlockThreshold.BLOCK_NONE,
+                   HarmCategory.HARM_CATEGORY_VIOLENCE: HarmBlockThreshold.BLOCK_NONE,
+                   }
+
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+import time  # Add this at the top with other imports
+
+def analyze_characters_with_gpt4(book_text: str, model_gpt4) -> List[BasicCharacter]:
+    """Analyze characters using GPT-4 with parallel processing"""
+    # Use larger chunks with better splitting
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=12000,  # Doubled chunk size
+        chunk_overlap=1000,
+        length_function=len,
+        separators=["\n\n", "\n", ".", " "]  # Better separators for narrative text
+    )
+    
+    text_chunks = text_splitter.split_text(book_text)
+    st.write(f"Split text into {len(text_chunks)} chunks")
+    
+    all_characters = []
+    seen_characters = set()
+    
+    def process_chunk(chunk: str, chunk_num: int) -> List[dict]:
+        """Process a single chunk"""
+        try:
+            messages = [
+                {"role": "system", "content": "You are a character analysis assistant. Output only valid JSON."},
+                {"role": "user", "content": f"""Analyze this text and output ONLY a JSON object with characters found:
+                {{
+                    "characters": [
+                        {{
+                            "name": "Character Name",
+                            "role": "protagonist/antagonist/supporting",
+                            "plot_importance": "Brief explanation",
+                            "importance_level": 5,
+                            "key_relationships": ["Relationship 1"]
+                        }}
+                    ]
+                }}
+                
+                Text: {chunk}"""}
+            ]
+            
+            response = model_gpt4.invoke(messages)
+            
+            if response.content:
+                try:
+                    data = json.loads(response.content)
+                    return data.get("characters", [])
+                except json.JSONDecodeError:
+                    return []
+        except Exception as e:
+            st.error(f"Error in chunk {chunk_num}: {str(e)}")
+            return []
+        
+        return []
+
+    # Process chunks in parallel using ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        # Create progress bar
+        progress_bar = st.progress(0)
+        
+        # Process chunks in batches of 5
+        batch_size = 5
+        for batch_start in range(0, len(text_chunks), batch_size):
+            batch_end = min(batch_start + batch_size, len(text_chunks))
+            current_batch = text_chunks[batch_start:batch_end]
+            
+            # Process batch in parallel
+            chunk_processors = [
+                partial(process_chunk, chunk, i)
+                for i, chunk in enumerate(current_batch, start=batch_start)
+            ]
+            
+            # Execute batch
+            results = list(executor.map(lambda p: p(), chunk_processors))
+            
+            # Process results
+            for characters in results:
+                for char in characters:
+                    if char["name"] not in seen_characters:
+                        try:
+                            character = BasicCharacter(
+                                name=char["name"],
+                                role=char.get("role", "unknown"),
+                                plot_importance=char.get("plot_importance", "Character found in text"),
+                                importance_level=int(char.get("importance_level", 1)),
+                                key_relationships=char.get("key_relationships", [])
+                            )
+                            all_characters.append(character)
+                            seen_characters.add(char["name"])
+                        except Exception as e:
+                            continue
+            
+            # Update progress
+            progress = min((batch_end) / len(text_chunks), 1.0)
+            progress_bar.progress(progress)
+            
+            # Small delay between batches to avoid rate limits
+            time.sleep(1)
+    
+    if not all_characters:
+        return BasicCharacterList(characters=[BasicCharacter(
+            name="Unknown Character",
+            role="unknown",
+            plot_importance="Could not analyze text",
+            importance_level=1,
+            key_relationships=[]
+        )])
+    
+    return BasicCharacterList(characters=all_characters)
+
 def analyze_characters(book_text: str):
     """Analyze characters in a given text using a three-pass system."""
-    model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.7)
+    model= ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.7, safety_settings=safety_settings)
+    model_gpt4 = ChatOpenAI(model="gpt-4", temperature=0.7)
 
     try:
-        with st.spinner("Finding all the characters in the story... This may take a few minutes... 📚✨"):
-            first_pass = model.invoke(first_pass_prompt.format(book_text=book_text))
-            basic_characters = basic_parser.parse(first_pass.content)
-            st.success("Found some interesting characters! 🎭")
+        # Validate input text
+        if not book_text or len(book_text.strip()) < 100:
+            raise ValueError("The uploaded PDF appears to be empty or too short.")
 
+        try:
+            with st.spinner("Finding all the characters in the story... This may take a few minutes... 📚✨"):
+                first_pass = model.invoke(first_pass_prompt.format(book_text=book_text))
+                st.write("Raw model output:", first_pass)
+                st.write("First pass response:", first_pass.content)
+                basic_characters = basic_parser.parse(first_pass.content)
+                st.success("Found some interesting characters! 🎭")
+        except Exception as e:
+            st.warning("Trying with GPT-4 as backup...")
+            basic_characters = analyze_characters_with_gpt4(book_text, model_gpt4)
+            st.success("Found some interesting characters using GPT-4! 🎭")
+
+        # Continue with the rest of the analysis...
         character_list = [{"name": char.name, "role": char.role}
                          for char in basic_characters.characters]
+
 
         with st.spinner("Getting to know their personalities and stories... 🤝💭"):
             second_pass = model.invoke(second_pass_prompt.format(
                 character_list=str(character_list)))
+            st.write("Second pass response:", second_pass.content)
             character_descriptions = description_parser.parse(second_pass.content)
             st.success("The characters are taking shape! ✨")
 
         with st.spinner("Uncovering their memorable moments and journeys... 📖💫"):
             third_pass = model.invoke(third_pass_prompt.format(
                 character_list=str(character_list)))
+            st.write("Third pass response:", third_pass.content)
             try:
                 character_depth = depth_parser.parse(third_pass.content)
             except Exception as e:
-                st.error("Some character memories are a bit fuzzy... 🌫️")
+                st.error(f"Parsing error in third pass: {str(e)}")
                 character_depth = CharacterDepthList(characters=[])
             st.success("Everyone's ready for a chat! 🎉")
 
@@ -203,18 +368,22 @@ def analyze_characters(book_text: str):
                     "memorable_quotes": char.memorable_quotes
                 }
                 for char in character_depth.characters
-            ]
+            ],
+            "analysis_timestamp": datetime.now().isoformat()  # Add timestamp for tracking
         }
 
-        # Save to JSON file
-        with open('character_analysis.json', 'w', encoding='utf-8') as f:
-            json.dump(result, f, indent=4, ensure_ascii=False)
-
-        return result
-
+        # Save with retry logic
+        if save_to_json(result):
+            return result
+        
+    except ValueError as ve:
+        st.error(f"Analysis Error: {str(ve)}")
+        st.session_state.analysis_complete = False
+        return None
     except Exception as e:
-        st.error(f"Error during character analysis: {str(e)}")
-        raise
+        st.error(f"Unexpected error during analysis: {str(e)}")
+        st.session_state.analysis_complete = False
+        return None
 
 def load_character_data():
     """Load character data from the JSON file"""
@@ -223,6 +392,37 @@ def load_character_data():
             return json.load(f)
     except FileNotFoundError:
         return None
+    
+def validate_fiction_content(text: str) -> tuple[bool, str]:
+    """
+    Validates if the provided text appears to be from a fictional book.
+    Returns (is_valid, message)
+    """
+    validation_prompt = """Analyze the following text and determine if it appears to be from a fictional book/story. 
+    Consider elements like narrative structure, characters, and storytelling.
+    
+    Respond with either:
+    - "VALID: [reason]" if it appears to be fiction
+    - "INVALID: [reason]" if it appears to be non-fiction, technical document, or other content
+    
+    Text to analyze:
+    {text}
+    """
+    
+    try:
+        model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0)
+        # Only analyze first and last 1000 characters to keep within context window
+        sample_text = text[:1000] + "..." + text[-1000:]
+        response = model.invoke(validation_prompt.format(text=sample_text))
+        
+        result = response.content.strip().upper()
+        is_valid = result.startswith("VALID:")
+        message = result.split(":", 1)[1].strip()
+        
+        return is_valid, message
+        
+    except Exception as e:
+        return False, f"Error validating content: {str(e)}"
 
 def get_character_list(character_data):
     """Extract list of available characters"""
@@ -318,24 +518,56 @@ def main():
         uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
         if uploaded_file is not None:
+            try:
+                # Validate file size
+                file_size = uploaded_file.size
+                if file_size > 10 * 1024 * 1024:  # 10MB limit
+                    st.error("File is too large. Please upload a PDF smaller than 10MB.")
+                    return
 
-            with open("temp.pdf", "wb") as f:
-                f.write(uploaded_file.getvalue())
+                with open("temp.pdf", "wb") as f:
+                    f.write(uploaded_file.getvalue())
 
-            if st.button("Let's Go!"):
+                if st.button("Let's Go!"):
+                    try:
+                        loader = PyPDFLoader("temp.pdf")
+                        document = loader.load()
+                        
+                        if not document:
+                            st.error("Could not read the PDF file. Please ensure it's a valid PDF document.")
+                            return
 
-                loader = PyPDFLoader("temp.pdf")
-                document = loader.load()
-                book_text = "\n\n".join(doc.page_content for doc in document)
+                        book_text = "\n\n".join(doc.page_content for doc in document)
 
+                        with st.spinner("Validating document content..."):
+                            is_fiction, message = validate_fiction_content(book_text)
+                            
+                            if not is_fiction:
+                                st.error(f"This doesn't appear to be a fictional book.")
+                                st.info("Please upload a fictional book or story. This tool is designed specifically for analyzing fictional characters.")
+                                return
+                        
+                        # Analyze with proper error handling
+                        result = analyze_characters(book_text)
+                        if result:
+                            st.session_state.analysis_complete = True
+                            st.success("Character analysis complete! You can now start chatting with the characters.")
+                            st.rerun()
 
-                analyze_characters(book_text)
-                st.session_state.analysis_complete = True
-                st.success("Character analysis complete! You can now start chatting with the characters.")
+                    except Exception as e:
+                        st.error(f"Error processing PDF: {str(e)}")
+                        st.session_state.analysis_complete = False
+                    finally:
+                        # Clean up temporary file
+                        if os.path.exists("temp.pdf"):
+                            try:
+                                os.remove("temp.pdf")
+                            except Exception as e:
+                                st.warning(f"Could not remove temporary file: {str(e)}")
 
-                if os.path.exists("temp.pdf"):
-                  os.remove("temp.pdf")
-                st.rerun()
+            except Exception as e:
+                st.error(f"Error handling uploaded file: {str(e)}")
+                st.session_state.analysis_complete = False
 
     else:
 

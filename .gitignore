@@ -60,6 +60,7 @@ venv/
 ENV/
 ENV.bak/
 venv.bak/
+.streamlit
 
 # Node.js #
 ###########
