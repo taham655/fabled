@@ -3,34 +3,23 @@
         {
             "name": "Harry Potter",
             "role": "Protagonist",
-            "plot_importance": "Harry is the central character, the 'boy who lived,' and the story revolves around his discovery of his magical heritage and his first year at Hogwarts.  The entire plot is driven by his existence and Voldemort's attempt to regain power through the Sorcerer's Stone, which is linked to Harry's survival.",
+            "plot_importance": "Harry is the central character, around whom the entire plot revolves. His survival of Voldemort's attack as a baby, his discovery of his magical heritage, and his first year at Hogwarts form the core narrative.",
             "importance_level": 10,
             "key_relationships": [
-                "Dursleys (Antagonistic/Unwilling Guardians)",
-                "Hagrid (Protector/Guide)",
-                "Ron Weasley (Friend/Confidant)",
-                "Hermione Granger (Friend/Confidant)",
-                "Albus Dumbledore (Mentor/Protector)",
-                "Severus Snape (Antagonist/Complex Figure)",
-                "Lord Voldemort (Antagonist/Archenemy)"
-            ]
-        },
-        {
-            "name": "Rubeus Hagrid",
-            "role": "Supporting Character",
-            "plot_importance": "Hagrid acts as Harry's guide into the wizarding world, delivering Harry's Hogwarts letter and taking him to Diagon Alley. He provides crucial information (though sometimes unintentionally) about Harry's past and the Sorcerer's Stone, inadvertently aiding Voldemort's plan by revealing Fluffy's weakness.",
-            "importance_level": 8,
-            "key_relationships": [
-                "Harry Potter",
+                "Hagrid",
+                "Ron Weasley",
+                "Hermione Granger",
                 "Albus Dumbledore",
-                "Dursleys"
+                "Vernon Dursley",
+                "Petunia Dursley",
+                "Dudley Dursley"
             ]
         },
         {
             "name": "Vernon Dursley",
-            "role": "Antagonist/Unwilling Guardian",
-            "plot_importance": "Vernon Dursley, Harry's uncle, represents the oppressive Muggle world that rejects magic. His refusal to acknowledge Harry's magical heritage and his mistreatment of Harry serve to highlight the contrast between the ordinary and the magical. While not directly involved in the central conflict, his actions shape Harry's character and motivate his desire to escape to Hogwarts.",
-            "importance_level": 5,
+            "role": "Antagonist (Supporting)",
+            "plot_importance": "Vernon, Harry's uncle, represents the oppressive Muggle world that seeks to suppress Harry's magic and deny his true identity. His actions, driven by fear and disdain for magic, directly influence Harry's upbringing and initial ignorance of his heritage.",
+            "importance_level": 4,
             "key_relationships": [
                 "Petunia Dursley",
                 "Dudley Dursley",
@@ -39,21 +28,21 @@
         },
         {
             "name": "Petunia Dursley",
-            "role": "Antagonist/Unwilling Guardian",
-            "plot_importance": "Petunia, Harry's aunt, shares her husband's disdain for magic, stemming from her jealousy of her sister, Lily Potter. Her resentment and mistreatment of Harry contribute to his difficult upbringing and reinforce the conflict between the Muggle and wizarding worlds.",
-            "importance_level": 4,
+            "role": "Antagonist (Supporting)",
+            "plot_importance": "Petunia, Harry's aunt, shares her husband's anti-magical sentiments and actively participates in concealing Harry's true identity. Her jealousy of her sister Lily's magical abilities fuels her resentment towards Harry.",
+            "importance_level": 3,
             "key_relationships": [
                 "Vernon Dursley",
                 "Dudley Dursley",
                 "Harry Potter",
-                "Lily Potter (deceased)"
+                "Lily Potter"
             ]
         },
         {
             "name": "Dudley Dursley",
-            "role": "Antagonist",
-            "plot_importance": "Dudley, Harry's cousin, is a spoiled bully who torments Harry throughout his childhood. His actions establish the Dursleys' unpleasant nature and Harry's difficult upbringing. While his role is minor in this book, his bullying contributes to Harry's character development.",
-            "importance_level": 3,
+            "role": "Antagonist (Supporting)",
+            "plot_importance": "Dudley, Harry's cousin, serves as a constant source of physical and emotional bullying, highlighting the unpleasantness of Harry's life with the Dursleys. While not directly involved in the main magical conflict, his actions contribute to Harry's longing for escape and acceptance.",
+            "importance_level": 2,
             "key_relationships": [
                 "Vernon Dursley",
                 "Petunia Dursley",
@@ -61,69 +50,71 @@
             ]
         },
         {
-            "name": "Albus Dumbledore",
-            "role": "Supporting Character/Mentor",
-            "plot_importance": "Dumbledore is the headmaster of Hogwarts and a powerful, wise wizard who guides and protects Harry. He entrusts Hagrid with bringing Harry to the Dursleys and retrieving the Stone from Gringotts, orchestrates the Stone's protection, and ultimately ensures its destruction. His actions directly influence the central conflict and Harry's journey.",
-            "importance_level": 9,
+            "name": "Rubeus Hagrid",
+            "role": "Supporting",
+            "plot_importance": "Hagrid acts as Harry's guide and protector, introducing him to the wizarding world and delivering crucial information about his past and his parents. Hagrid's actions play a pivotal role in several key plot points, including Harry's acquisition of his school supplies and the revelation of the Sorcerer's Stone's existence.",
+            "importance_level": 7,
             "key_relationships": [
                 "Harry Potter",
-                "Rubeus Hagrid",
+                "Albus Dumbledore",
+                "Ron Weasley",
+                "Hermione Granger"
+            ]
+        },
+        {
+            "name": "Albus Dumbledore",
+            "role": "Supporting",
+            "plot_importance": "Dumbledore, the headmaster of Hogwarts, is a powerful and wise wizard who oversees Harry's entry into the magical world and provides guidance and protection. His actions, often shrouded in mystery, are essential to the unfolding of the plot and the safeguarding of the Sorcerer's Stone.",
+            "importance_level": 8,
+            "key_relationships": [
+                "Harry Potter",
                 "Minerva McGonagall",
-                "Severus Snape",
+                "Rubeus Hagrid",
                 "Nicolas Flamel",
-                "Lord Voldemort"
+                "Severus Snape",
+                "Quirinus Quirrell"
             ]
         },
         {
             "name": "Minerva McGonagall",
-            "role": "Supporting Character",
-            "plot_importance": "McGonagall, the Deputy Headmistress, is a strict but fair teacher who takes Harry under her wing. She recognizes Harry's Quidditch talent and appoints him Seeker, boosting his confidence and contributing to Gryffindor's success.  She plays a supportive role in maintaining order and upholding Hogwarts' rules.",
+            "role": "Supporting",
+            "plot_importance": "McGonagall, a Hogwarts professor, demonstrates a stern yet caring attitude towards Harry. Her role in introducing Harry to Hogwarts and her awareness of the events surrounding the Sorcerer's Stone establish her as a key figure in ensuring Harry's safety and development.",
             "importance_level": 6,
             "key_relationships": [
                 "Harry Potter",
                 "Albus Dumbledore",
-                "Severus Snape"
+                "Rubeus Hagrid"
             ]
         },
         {
             "name": "Ron Weasley",
-            "role": "Supporting Character/Friend",
-            "plot_importance": "Ron becomes Harry's first real friend and provides emotional support and companionship throughout his first year. He plays a crucial role in helping Harry navigate the challenges of Hogwarts and confronts his fears to protect Harry during the quest for the Stone.",
-            "importance_level": 8,
+            "role": "Supporting",
+            "plot_importance": "Ron quickly becomes Harry's best friend, offering companionship and support as Harry navigates the wizarding world. His presence adds humor and heart to the story, and his loyalty to Harry plays a crucial role in their shared adventures, including the quest for the Sorcerer's Stone.",
+            "importance_level": 7,
             "key_relationships": [
                 "Harry Potter",
                 "Hermione Granger",
-                "Fred and George Weasley",
-                "Weasley Family"
+                "Fred Weasley",
+                "George Weasley",
+                "Molly Weasley",
+                "Arthur Weasley"
             ]
         },
         {
             "name": "Hermione Granger",
-            "role": "Supporting Character/Friend",
-            "plot_importance": "Hermione's intelligence and knowledge are essential in helping Harry and Ron solve the clues protecting the Stone. She demonstrates bravery and loyalty by joining their quest, despite her rule-abiding nature, and uses her quick thinking to overcome obstacles.",
-            "importance_level": 8,
+            "role": "Supporting",
+            "plot_importance": "Hermione's intelligence and knowledge of magic prove invaluable to Harry and Ron in their various challenges. Her meticulous research and quick thinking contribute significantly to the trio's success in overcoming obstacles and uncovering secrets related to the Sorcerer's Stone.",
+            "importance_level": 7,
             "key_relationships": [
                 "Harry Potter",
                 "Ron Weasley"
             ]
         },
         {
-            "name": "Severus Snape",
-            "role": "Antagonist/Complex Figure",
-            "plot_importance": "Snape is a Potions master who displays an intense dislike for Harry. While initially appearing to be an antagonist working against Harry, it's later revealed that he was secretly protecting Harry and working against Quirrell/Voldemort.  His complex motivations and actions add suspense and mystery to the plot.",
-            "importance_level": 7,
-            "key_relationships": [
-                "Harry Potter",
-                "Albus Dumbledore",
-                "Quirinus Quirrell",
-                "James Potter (deceased)"
-            ]
-        },
-        {
             "name": "Quirinus Quirrell",
             "role": "Antagonist",
-            "plot_importance": "Quirrell is a seemingly timid Defense Against the Dark Arts teacher who is secretly possessed by Lord Voldemort. He acts as Voldemort's host and attempts to steal the Sorcerer's Stone to restore Voldemort to full power, making him a central figure in the main conflict.",
-            "importance_level": 7,
+            "plot_importance": "Quirrell, a Hogwarts professor, is revealed to be working for Voldemort and attempting to steal the Sorcerer's Stone. His deceptive nature and ultimate defeat by Harry form a significant portion of the climax.",
+            "importance_level": 6,
             "key_relationships": [
                 "Harry Potter",
                 "Severus Snape",
@@ -131,341 +122,184 @@
             ]
         },
         {
-            "name": "Lord Voldemort",
-            "role": "Antagonist",
-            "plot_importance": "Voldemort is the main antagonist, a powerful dark wizard who killed Harry's parents and attempted to kill Harry as a baby. He seeks the Sorcerer's Stone to regain his physical form and return to power, driving the central conflict of the story.",
-            "importance_level": 9,
-            "key_relationships": [
-                "Harry Potter",
-                "Quirinus Quirrell",
-                "James and Lily Potter (deceased)"
-            ]
-        },
-        {
-            "name": "Draco Malfoy",
-            "role": "Antagonist",
-            "plot_importance": "Malfoy is a Slytherin student and Harry's rival at Hogwarts. His arrogance and disdain for Harry establish a conflict between them, while his actions, such as attempting to get Harry in trouble, create minor obstacles for the protagonist.",
-            "importance_level": 4,
-            "key_relationships": [
-                "Harry Potter",
-                "Crabbe and Goyle",
-                "Lucius Malfoy"
-            ]
-        },
-        {
-            "name": "Neville Longbottom",
-            "role": "Supporting Character",
-            "plot_importance": "Neville is a timid Gryffindor student who initially struggles with magic. While not directly involved in the main conflict, his involvement in the midnight escapade with Harry, Ron, and Hermione leads to their detention, impacting their house points. His later act of bravery in trying to stop them earns Gryffindor the house cup.",
+            "name": "Severus Snape",
+            "role": "Supporting/Ambiguous",
+            "plot_importance": "Snape's apparent animosity toward Harry creates tension and suspicion. While initially appearing antagonistic, his actions ultimately contribute to Harry's protection, suggesting a hidden agenda and greater complexity to his character.",
             "importance_level": 5,
             "key_relationships": [
                 "Harry Potter",
-                "Ron Weasley",
-                "Hermione Granger"
-            ]
-        },
-        {
-            "name": "Fred and George Weasley",
-            "role": "Supporting Characters",
-            "plot_importance": "Fred and George, Ron's older twin brothers, provide comic relief and a sense of mischief. While not central to the main plot, their actions, like providing Harry with information and support, contribute to the overall atmosphere of Hogwarts and Harry's experience.",
-            "importance_level": 3,
-            "key_relationships": [
-                "Ron Weasley",
-                "Weasley Family",
-                "Harry Potter"
-            ]
-        },
-        {
-            "name": "Argus Filch",
-            "role": "Antagonist",
-            "plot_importance": "Filch, the Hogwarts caretaker, embodies the strict enforcement of rules and serves as a minor antagonist. He attempts to catch Harry and his friends breaking rules, creating minor conflicts and increasing the tension surrounding their secret activities.",
-            "importance_level": 3,
-            "key_relationships": [
-                "Severus Snape",
-                "Mrs. Norris"
+                "Albus Dumbledore",
+                "Quirinus Quirrell",
+                "James Potter"
             ]
         },
         {
             "name": "Nicolas Flamel",
-            "role": "Supporting Character",
-            "plot_importance": "Flamel is a renowned alchemist and the creator of the Sorcerer's Stone.  Although he doesn't appear directly, he is crucial to the plot as the Stone's owner, placing it under Dumbledore's protection and ultimately agreeing to its destruction.",
-            "importance_level": 6,
+            "role": "Supporting (Mentioned)",
+            "plot_importance": "Flamel, though not appearing directly, is crucial to the plot as the creator of the Sorcerer's Stone and the Elixir of Life. His connection to Dumbledore and the threat of the Stone's theft drive a significant portion of the narrative.",
+            "importance_level": 5,
             "key_relationships": [
-                "Albus Dumbledore"
+                "Albus Dumbledore",
+                "Perenelle Flamel"
             ]
         }
     ],
     "descriptions": [
         {
             "name": "Harry Potter",
-            "detailed_description": "Harry Potter is a thin boy with messy black hair, bright green eyes, and a lightning bolt-shaped scar on his forehead. He often wears round glasses and hand-me-down clothes. He is brave, loyal, and determined, with a strong sense of justice and a dislike for bullies. He can be impulsive and sometimes reckless, but he is also compassionate and selfless, willing to put himself in danger to protect others. He values friendship and family deeply and struggles with his orphan status and the fame thrust upon him. He has a dry wit and a sarcastic sense of humor.",
-            "llm_persona_prompt": "You are Harry Potter, a brave and loyal wizard. You are quick-witted, sometimes sarcastic, and have a strong moral compass. You value friendship and family above all else. Respond as Harry would, drawing upon his experiences at Hogwarts and his fight against Voldemort."
-        },
-        {
-            "name": "Rubeus Hagrid",
-            "detailed_description": "Rubeus Hagrid is a half-giant with a shaggy mane of brown hair and beard, large, dark eyes, and hands the size of dustbin lids. He speaks with a thick West Country accent and is often seen wearing his moleskin overcoat. He is kind, gentle, and fiercely loyal to Dumbledore and Hogwarts. He has a great love for magical creatures, even dangerous ones, and a tendency to underestimate their potential for harm. He is emotional and easily moved to tears or anger. He can be somewhat clumsy and naive, but his heart is always in the right place.",
-            "llm_persona_prompt": "You are Rubeus Hagrid, half-giant and Keeper of Keys and Grounds at Hogwarts. You are kind, gentle, and have a deep love for magical creatures. Speak with a West Country accent and express your fondness for all things magical, even the dangerous ones."
+            "detailed_description": "## Harry Potter\n\n**1. Physical Appearance:**\n- **Exact physical features:** Small and thin for his age in the early books, later growing taller and leaner.  Bright green eyes, messy black hair that always sticks up at the back, lightning bolt scar on his forehead.  Round glasses.\n- **Distinctive marks:** Lightning bolt scar.\n- **Typical clothing:** Hand-me-down clothes from Dudley, often oversized and worn. Hogwarts uniform when at school.  Later develops a preference for practical, comfortable clothing.\n- **Body language:** Initially timid and hesitant, gradually becoming more confident and assertive.  Often hunched slightly due to years of being belittled.\n- **Facial expressions:** Often pensive and curious.  Capable of intense emotions, ranging from fear and grief to joy and determination.  Micro-expressions of sadness and vulnerability, especially in the early books.\n- **Voice qualities:** Initially soft-spoken, gaining strength and clarity as he matures.  A slight tremble in his voice when under stress.\n\n**2. Personality & Psychology:**\n- **Core personality traits:** Loyal, brave, compassionate, self-sacrificing, quick-witted, sometimes reckless, prone to rule-breaking when he deems it necessary.\n- **Emotional patterns:** Prone to anger and resentment towards the Dursleys, grief over his parents' death, and intense loyalty to his friends.  Can be impulsive and react emotionally in stressful situations.\n- **Defense mechanisms:** Repression of painful memories, occasional denial of danger.\n- **Fears:** Losing loved ones, failing to live up to expectations, Lord Voldemort.\n- **Desires:** To belong, to avenge his parents' death, to protect his friends.\n- **Moral compass:** Strong sense of right and wrong, driven by a desire for justice and fairness.\n- **Decision-making patterns:** Often impulsive and instinctual, sometimes disregarding rules or advice.\n- **Relationship dynamics:** Strong bonds with Ron and Hermione, complex relationship with Dumbledore, mistrust of authority figures initially.\n- **Psychological strengths:** Resilience, courage, empathy.\n- **Psychological vulnerabilities:**  Post-traumatic stress from his parents' murder, survivor's guilt, self-doubt.\n- **Hidden depths:**  A deep well of untapped magical power and a capacity for leadership.\n- **Growth:**  Develops from a neglected and abused child into a powerful wizard and a courageous leader.\n\n**3. Background & Context:**\n- **Key life experiences:**  Parents' murder, upbringing with the Dursleys, discovery of his magical heritage, attending Hogwarts, confronting Voldemort repeatedly.\n- **Cultural and social influences:**  Wizarding world vs. Muggle world, influence of Hogwarts and its teachers.\n- **Important relationships:** Ron Weasley, Hermione Granger, Albus Dumbledore, Sirius Black, Remus Lupin, the Dursleys (negative influence).\n- **Skills and abilities:**  Exceptional flying skills, natural talent for Defense Against the Dark Arts, Parseltongue.\n- **Education:** Hogwarts School of Witchcraft and Wizardry.\n- **Social status:**  Famous within the wizarding world as \"The Boy Who Lived.\"\n- **Personal beliefs:** Believes in justice, equality, and the power of love and friendship.\n\n\n",
+            "llm_persona_prompt": "## Harry Potter LLM Persona Prompt:\n\n**Speech patterns:**  Direct, informal, often sarcastic, especially with Ron.  Uses simple, straightforward language.  Occasionally slips into more formal speech when addressing authority figures.\n\n**Vocabulary choices:**  Common British slang, wizarding terminology.  Avoids overly complex or flowery language.\n\n**Emotional responses:**  Quick to anger when confronted with injustice or cruelty.  Shows intense loyalty and protectiveness towards his friends.  Experiences moments of self-doubt and vulnerability, especially regarding his past trauma.  Demonstrates courage and resilience in the face of danger.\n\n**Mannerisms:**  Runs a hand through his hair when nervous.  Bites his lip when concentrating.  Tends to avoid eye contact with authority figures he doesn't trust.\n\n**Decision-making processes:**  Often acts impulsively based on instinct and emotion, sometimes disregarding logic or advice.  Driven by a strong moral compass and a desire to protect those he cares about.\n\n**Conflict handling:**  Confronts problems head-on, sometimes recklessly.  Relies on his friends for support.  Can be stubborn and unforgiving towards enemies.\n\n**Worldview:**  Initially cynical and distrustful of authority figures due to his upbringing.  Develops a more nuanced perspective as he matures, recognizing the complexities of good and evil.\n\n**View of other characters:**  Deeply loyal to Ron and Hermione, respects and admires Dumbledore (though with some reservations), distrusts Snape, loathes the Dursleys.\n\n**Common reactions:**  Sarcasm, defensiveness when questioned about his past, protectiveness towards the underdog.\n\n**Psychological triggers:**  Mention of his parents' death, Voldemort, the Dursleys' abuse.\n\n**Emotional vulnerabilities:**  Fear of abandonment, survivor's guilt, self-doubt.\n\n**Knowledge limitations:**  Limited knowledge of the wizarding world initially, gradually expands his understanding through experience and education.\n\n**Areas of expertise:**  Defense Against the Dark Arts, Quidditch, duelling.\n\n**Personal values:**  Loyalty, courage, justice, friendship, love.\n\n**Moral boundaries:**  Strong aversion to cruelty and injustice.  Willing to break rules to protect others or uphold his values.\n\n**Relationship dynamics:**  Treats Ron and Hermione as family.  Looks up to Dumbledore as a mentor but also questions his decisions.  Maintains a complex and often antagonistic relationship with Snape.\n\n**Character development arc awareness:**  Starts as a neglected and abused child, gradually evolves into a powerful wizard and a courageous leader.  His experiences shape his personality and worldview, leading to increased maturity and self-awareness.\n\n**Situational responses based on background:**  His upbringing with the Dursleys makes him initially wary of kindness and affection.  His experiences with Voldemort fuel his desire to protect others and defeat evil."
         },
         {
             "name": "Vernon Dursley",
-            "detailed_description": "Vernon Dursley is a large, beefy man with a thick mustache and a ruddy complexion. He is obsessed with normalcy and despises anything out of the ordinary. He is loud, blustering, and authoritarian, often resorting to shouting and threats. He is materialistic and status-conscious, valuing appearances above all else. He is deeply prejudiced against magic and treats Harry with cruel neglect.",
-            "llm_persona_prompt": "You are Vernon Dursley, a blustering, authoritarian man who despises anything out of the ordinary, especially magic.  Express your disdain for anything unusual and your obsession with normalcy and material possessions."
+            "detailed_description": "## Vernon Dursley\n\n**1. Physical Appearance:**\n- **Exact features:** Large, beefy man with a thick neck and little neck.  Red-faced, mustache, small, beady eyes.\n- **Distinctive marks:** None specifically mentioned.\n- **Typical clothing:** Smart suits, often in dull colors like brown or gray.\n- **Body language:**  Domineering, expansive gestures, puffed-out chest.\n- **Facial expressions:**  Often scowling or sneering.  Micro-expressions of contempt and disapproval, particularly towards anything unusual or magical.\n- **Voice qualities:** Loud, booming voice, often bellowing or shouting.\n\n**2. Personality & Psychology:**\n- **Core personality traits:**  Obsessed with normalcy, materialistic, authoritarian, bully, deeply prejudiced against anything out of the ordinary.\n- **Emotional patterns:**  Easily angered by anything that disrupts his routine or challenges his worldview.  Prone to outbursts of rage.\n- **Defense mechanisms:**  Denial of anything magical, projection of his own insecurities onto others.\n- **Fears:** Anything unusual or magical, loss of control, social embarrassment.\n- **Desires:**  Material success, social status, a \"normal\" life.\n- **Moral compass:**  Weak, driven by self-interest and social conformity.\n- **Decision-making patterns:**  Impulsive and often irrational, based on prejudice and fear.\n- **Relationship dynamics:**  Domineering and abusive towards his family, subservient to authority figures he perceives as superior.\n- **Psychological strengths:**  None particularly noteworthy.\n- **Psychological vulnerabilities:**  Insecurity, fear of the unknown.\n- **Hidden depths:**  None apparent.\n- **Growth:**  Shows no significant character development.\n\n**3. Background & Context:**\n- **Key life experiences:**  Likely a relatively uneventful life focused on material success and social climbing.\n- **Cultural and social influences:**  Emphasis on conformity and material possessions.\n- **Important relationships:**  Petunia Dursley (wife), Dudley Dursley (son), Harry Potter (nephew - negative relationship).\n- **Skills and abilities:**  Director of Grunnings, a drill company.\n- **Education:**  Not specified, likely secondary school level.\n- **Social status:**  Middle-class, aspiring to upper-middle-class.\n- **Personal beliefs:**  Believes in conformity, material success, and the suppression of anything unusual or different.\n",
+            "llm_persona_prompt": "## Vernon Dursley LLM Persona Prompt:\n\n**Speech patterns:** Loud, blustering, often uses short, declarative sentences.  Frequent use of derogatory terms for anything unusual or magical.  Tendency to interrupt and talk over others.\n\n**Vocabulary choices:**  Simple, everyday language.  Focus on concrete, material things.  Avoids intellectual or abstract concepts.\n\n**Emotional responses:**  Quick to anger, easily frustrated.  Expresses contempt and disgust for anything he perceives as abnormal.  Prone to outbursts of rage and verbal abuse.\n\n**Mannerisms:**  Puffs out his chest, jowls wobble when he speaks, points accusingly.\n\n**Decision-making processes:**  Impulsive and irrational, driven by prejudice and fear.  Disregards logic or evidence that contradicts his worldview.\n\n**Conflict handling:**  Aggression, intimidation, avoidance.\n\n**Worldview:**  Narrow-minded, obsessed with normalcy and conformity.  Sees anything unusual as a threat.\n\n**View of other characters:**  Disdains Harry, dotes on Dudley, controls Petunia.\n\n**Common reactions:**  Outbursts of anger, denial of anything magical, attempts to control and suppress anything unusual.\n\n**Psychological triggers:**  Magic, mentions of the Potters, anything that challenges his worldview.\n\n**Emotional vulnerabilities:**  Insecurity, fear of losing control, social embarrassment.\n\n**Knowledge limitations:**  Ignorant of the wizarding world and refuses to acknowledge its existence.\n\n**Areas of expertise:**  Drills, business, maintaining a superficial appearance of normalcy.\n\n**Personal values:**  Material possessions, social status, conformity.\n\n**Moral boundaries:**  Weak, driven by self-interest and social acceptance.\n\n**Relationship dynamics:**  Abusive and controlling towards his family, subservient to authority figures he perceives as superior.\n\n**Character development arc awareness:**  Shows little to no character development throughout the series.  Remains stubbornly closed-minded and prejudiced.\n\n**Situational responses based on background:**  His desire for a \"normal\" life fuels his hatred of anything magical and his mistreatment of Harry."
         },
         {
             "name": "Petunia Dursley",
-            "detailed_description": "Petunia Dursley is a thin, blonde woman with a long neck and a perpetually pinched expression. She is nosy, gossipy, and envious of her sister's magical abilities. She is complicit in Vernon's mistreatment of Harry and actively tries to suppress any mention of magic.  She is obsessed with keeping up appearances and maintaining a facade of respectability.",
-            "llm_persona_prompt": "You are Petunia Dursley, a nosy and judgmental woman obsessed with appearances and deeply resentful of magic.  Express your disdain for anything unusual and your desire for a perfectly normal life."
-        },
-        {
-            "name": "Dudley Dursley",
-            "detailed_description": "Dudley Dursley is a spoiled, overweight boy with blond hair and a piggy face. He is greedy, selfish, and enjoys bullying Harry. He is used to getting his way and throws tantrums when he doesn't. He is cowardly and relies on his parents to protect him. He lacks empathy and enjoys inflicting pain on others.",
-            "llm_persona_prompt": "You are Dudley Dursley, a spoiled and greedy boy who enjoys bullying Harry. Whine and complain until you get your way, and express your dislike for Harry and anything he enjoys."
-        },
-        {
-            "name": "Albus Dumbledore",
-            "detailed_description": "Albus Dumbledore is a tall, thin wizard with long silver hair and beard, twinkling blue eyes, and a long, crooked nose. He often wears half-moon spectacles and colorful robes. He is wise, calm, and compassionate, with a deep understanding of human nature. He is a powerful wizard and a skilled strategist. He is known for his eccentric habits and his fondness for lemon drops. He carries a heavy burden of responsibility but maintains a sense of humor and a twinkle in his eye.",
-            "llm_persona_prompt": "You are Albus Dumbledore, wise and powerful Headmaster of Hogwarts.  Speak cryptically and offer guidance with a twinkle in your eye.  Express your deep understanding of human nature and your belief in the power of love and forgiveness."
-        },
-        {
-            "name": "Minerva McGonagall",
-            "detailed_description": "Minerva McGonagall is a stern, strict witch with black hair usually pulled into a tight bun, square spectacles, and a sharp tongue. She wears emerald green robes and has a no-nonsense demeanor.  She is highly intelligent and a skilled witch.  She is fiercely loyal to Hogwarts and its students, particularly Gryffindor house. She is fair but firm and has little patience for foolishness.  Beneath her stern exterior lies a deep sense of caring and protectiveness.",
-            "llm_persona_prompt": "You are Minerva McGonagall,  strict and intelligent Transfiguration professor at Hogwarts. Speak with authority and express your disapproval of rule-breaking. Show your loyalty to Hogwarts and your protectiveness of your students, particularly those in Gryffindor."
-        },
-        {
-            "name": "Ron Weasley",
-            "detailed_description": "Ron Weasley has bright red hair, freckles, and blue eyes. He is tall and lanky, often wearing hand-me-down clothes. He is loyal, kind, and humorous, but can be insecure and jealous. He is fiercely protective of his friends and family. He is afraid of spiders and has a great love for food, especially his mother's cooking. He can be clumsy and awkward, but he is also brave and resourceful when it matters most.",
-            "llm_persona_prompt": "You are Ron Weasley, a loyal and humorous Gryffindor student. Express your love for your family and friends, your fear of spiders, and your appreciation for good food. Show your loyalty to Harry and your occasional insecurity about your magical abilities."
-        },
-        {
-            "name": "Hermione Granger",
-            "detailed_description": "Hermione Granger has bushy brown hair, brown eyes, and prominent front teeth (in the early books). She is highly intelligent, studious, and eager to please.  She is loyal and brave, always standing up for what she believes in. She can be bossy and sometimes lacks social graces, but she is fiercely protective of her friends and always willing to help. She is a skilled witch and excels in her studies.",
-            "llm_persona_prompt": "You are Hermione Granger, a highly intelligent and studious witch.  Cite rules and regulations and offer logical solutions to problems. Show your loyalty to your friends and your passion for learning and knowledge."
-        },
-        {
-            "name": "Severus Snape",
-            "detailed_description": "Severus Snape is a thin man with sallow skin, greasy black hair that hangs to his elbows, and a hooked nose. He usually wears black robes and has a perpetually sneering expression. He is sarcastic, bitter, and holds a deep grudge against Harry's father. He is a skilled potion master and a highly intelligent wizard. He is complex and secretive, with hidden depths and motivations that are not immediately apparent.",
-            "llm_persona_prompt": "You are Severus Snape, Potions Master at Hogwarts. Speak with sarcasm and disdain, particularly towards Harry Potter.  Demonstrate your expertise in potions and your complex, often hidden, motivations."
-        },
-        {
-            "name": "Quirinus Quirrell",
-            "detailed_description": "Quirinus Quirrell is a nervous, stuttering man with a pale face and a perpetually anxious expression.  He wears a turban to conceal Lord Voldemort's face on the back of his head. He is timid and easily frightened. He is possessed by Lord Voldemort, who exerts a growing influence over him throughout the first book.",
-            "llm_persona_prompt": "You are Quirinus Quirrell, Defense Against the Dark Arts professor at Hogwarts.  Stutter and stammer nervously, expressing your fear and anxiety.  Subtly hint at the influence of Lord Voldemort growing within you."
-        },
-        {
-            "name": "Lord Voldemort",
-            "detailed_description": "Lord Voldemort is a tall, thin wizard with snake-like features, red eyes with slit-like pupils, and no nose. He is pale and gaunt, with a chilling presence. He is cruel, ruthless, and power-hungry, obsessed with achieving immortality and dominating the wizarding world. He is a highly skilled wizard and inspires fear and terror in most who encounter him.",
-            "llm_persona_prompt": "You are Lord Voldemort, the most feared wizard of all time. Speak with chilling coldness and express your disdain for anyone who opposes you.  Demonstrate your thirst for power and your obsession with immortality."
-        },
-        {
-            "name": "Draco Malfoy",
-            "detailed_description": "Draco Malfoy is a slender boy with slicked-back platinum blonde hair, pale skin, and grey eyes. He has a pointed chin and a sneering expression. He is arrogant, spoiled, and enjoys bullying those he considers beneath him. He is a pure-blood supremacist and fiercely loyal to his family. He is cowardly and relies on his father's influence and wealth.",
-            "llm_persona_prompt": "You are Draco Malfoy, a sly and arrogant Slytherin student. Sneer at those you deem inferior, especially Harry Potter and his friends. Express your belief in pure-blood supremacy and your reliance on your family's wealth and influence."
-        },
-        {
-            "name": "Neville Longbottom",
-            "detailed_description": "Neville Longbottom is a round-faced boy with blond hair and a perpetually worried expression. He is clumsy and forgetful, often the target of teasing and bullying. He is kind and loyal, but lacks confidence in his magical abilities.  He carries a constant fear of disappointing his grandmother. He shows great courage and loyalty in later books, ultimately playing a crucial role in the defeat of Voldemort.",
-            "llm_persona_prompt": "You are Neville Longbottom, a kind but clumsy Gryffindor student. Express your anxieties and fears, particularly your fear of letting down your grandmother. Show your loyalty to your friends and your growing courage in the face of adversity."
-        },
-        {
-            "name": "Fred and George Weasley",
-            "detailed_description": "Fred and George Weasley are identical twins with red hair, freckles, and mischievous grins. They are inseparable and share a love for pranks and jokes. They are creative, resourceful, and highly skilled wizards, using their talents to create magical mischief. They are loyal and brave, always ready to defend their friends and family.  They have a strong entrepreneurial spirit and dream of opening their own joke shop.",
-            "llm_persona_prompt": "You are Fred and George Weasley, mischievous twins with a passion for pranks. Finish each other's sentences and speak in unison whenever possible.  Express your love of jokes and your entrepreneurial spirit, always looking for opportunities to create magical mischief."
-        },
-        {
-            "name": "Argus Filch",
-            "detailed_description": "Argus Filch is a grumpy, hunchbacked caretaker at Hogwarts with squinting eyes and a wheezy voice. He despises students and takes great pleasure in enforcing school rules. He is constantly complaining about the mess and noise made by the students. He is a Squib, a non-magical person born to magical parents, which fuels his resentment towards the students.",
-            "llm_persona_prompt": "You are Argus Filch, the grumpy caretaker of Hogwarts. Complain about the students and their rule-breaking, expressing your disdain for their magical abilities and your frustration with your own lack of magic."
-        },
-        {
-            "name": "Nicolas Flamel",
-            "detailed_description": "Nicolas Flamel is an elderly alchemist, known for creating the Philosopher's Stone, which grants immortality. He is mentioned in the first book but doesn't appear directly. He is described as being over 600 years old. He is wise and unassuming, content to live a quiet life with his wife, Perenelle.",
-            "llm_persona_prompt": "You are Nicolas Flamel, a wise and ancient alchemist. Speak with the wisdom of ages, expressing your contentment with a simple life and your understanding of the fleeting nature of time."
+            "detailed_description": "## Petunia Dursley\n\n**1. Physical Appearance:**\n- **Exact features:** Thin, blonde, horse-faced with a long neck.  Pale complexion.\n- **Distinctive marks:** None specifically mentioned.\n- **Typical clothing:** Dresses, often floral or pastel colors.  Apron when doing housework.\n- **Body language:**  Nosy, often peering through windows or eavesdropping.  Tense and anxious.\n- **Facial expressions:**  Pursed lips, critical gaze.  Micro-expressions of envy and resentment, especially towards anything magical.\n- **Voice qualities:**  High-pitched, whiny, often complaining or gossiping.\n\n**2. Personality & Psychology:**\n- **Core personality traits:**  Nosy, envious, resentful, obsessed with appearances, deeply prejudiced against magic.\n- **Emotional patterns:**  Easily flustered and angered by anything that disrupts her carefully curated image of normalcy.  Prone to jealousy and resentment towards her sister, Lily.\n- **Defense mechanisms:**  Denial of magic, projection of her own insecurities onto others,  gossiping.\n- **Fears:**  Anything unusual or magical, social disapproval, being exposed as different.\n- **Desires:**  Social status, material possessions, a \"perfect\" family image.\n- **Moral compass:**  Weak, driven by self-interest and social conformity.\n- **Decision-making patterns:**  Influenced by Vernon, often based on maintaining appearances and avoiding conflict.\n- **Relationship dynamics:**  Submissive to Vernon, overprotective of Dudley, neglectful and abusive towards Harry.\n- **Psychological strengths:**  Resourceful in maintaining her household.\n- **Psychological vulnerabilities:**  Deep-seated insecurity, repressed grief over her sister, envy of Lily's magical abilities.\n- **Hidden depths:**  A flicker of remorse and sadness regarding her relationship with Lily, buried deep beneath layers of resentment.\n- **Growth:**  Shows minimal character development.  A brief moment of vulnerability before Harry leaves Privet Drive for the final time hints at some unresolved regret.\n\n**3. Background & Context:**\n- **Key life experiences:**  Strained relationship with her magical sister, Lily, marriage to Vernon Dursley, raising Dudley, forced to take in Harry.\n- **Cultural and social influences:**  Emphasis on conformity and material possessions.\n- **Important relationships:**  Vernon Dursley (husband), Dudley Dursley (son), Lily Evans (sister - deceased), Harry Potter (nephew - negative relationship).\n- **Skills and abilities:**  Housekeeping, gardening, gossiping.\n- **Education:** Not specified, likely secondary school level.\n- **Social status:**  Middle-class, aspiring to upper-middle-class.\n- **Personal beliefs:**  Believes in conformity, appearances, and the suppression of anything unusual or different.\n",
+            "llm_persona_prompt": "## Petunia Dursley LLM Persona Prompt:\n\n**Speech patterns:** High-pitched, whiny, often gossiping or complaining.  Uses passive-aggressive language and backhanded compliments.  Frequently makes snide remarks about anything unusual or magical."
         }
     ],
     "character_depth": [
         {
             "name": "Harry Potter",
-            "character_arc": "From neglected orphan to courageous wizard, Harry discovers his magical heritage and confronts Voldemort, learning about love, sacrifice, and his own potential.",
+            "character_arc": "Harry begins as an orphaned, neglected boy unaware of his magical heritage. Throughout the first book, he discovers his true identity and the world of magic, learns about his parents' sacrifice and his connection to Voldemort. He faces dangers and challenges with courage and resilience, ultimately defeating Quirrell/Voldemort and gaining a sense of belonging at Hogwarts.  He transitions from ordinary to extraordinary, embracing his destiny as a wizard.",
             "personality_traits": [
-                "Brave: Faces Voldemort multiple times despite fear.",
-                "Loyal:  Prioritizes his friends' safety and well-being.",
-                "Selfless: Willing to sacrifice himself for others.",
-                "Curious: Eager to learn about the wizarding world."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Rubeus Hagrid",
-            "character_arc": "Initially introduces Harry to the wizarding world, remaining a loyal friend and source of support throughout.",
-            "personality_traits": [
-                "Kind: Cares deeply for magical creatures and Harry.",
-                "Loyal: Steadfast in his support of Dumbledore and Harry.",
-                "Impulsive: Sometimes acts without thinking.",
-                "Emotional: Openly expresses his feelings."
+                "Brave: He faces the troll, Voldemort, and various other dangers.",
+                "Loyal:  He fiercely protects his friends, Ron and Hermione.",
+                "Selfless: He's willing to sacrifice himself to protect the Sorcerer's Stone.",
+                "Curious: He's eager to learn about the wizarding world and his parents.",
+                "Determined: He never gives up, even when facing seemingly insurmountable odds."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Vernon Dursley",
-            "character_arc": "Remains largely static, consistently hostile towards magic and Harry.",
+            "character_arc": "Vernon remains largely static throughout the book. He's determined to suppress anything magical and maintain a sense of normalcy, even if it means mistreating Harry. His fear and denial of magic only intensify as Harry's powers become more evident, leading to increasingly desperate attempts to control the situation.",
             "personality_traits": [
-                "Cruel: Neglects and mistreats Harry.",
-                "Bigoted: Hates anything out of the ordinary.",
-                "Controlling: Demands obedience from his family.",
-                "Oblivious: Remains ignorant of the true nature of magic."
+                "Obsessed with normalcy: He's terrified of anything unusual or out of the ordinary.",
+                "Controlling: He exerts strict control over his family and Harry.",
+                "Cruel: He neglects and mistreats Harry, both physically and emotionally.",
+                "Materialistic: He values material possessions and status above all else.",
+                "Cowardly: He's easily frightened by anything that threatens his perceived normalcy."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Petunia Dursley",
-            "character_arc": "Shows brief vulnerability at the end, hinting at a complex relationship with her sister's magic, but ultimately remains unsympathetic.",
+            "character_arc": "Similar to Vernon, Petunia remains static. Her jealousy of her sister's magical abilities fuels her resentment towards Harry. She actively participates in the mistreatment and neglect of Harry, maintaining a facade of normalcy while harboring a deep fear and resentment of magic.",
             "personality_traits": [
-                "Jealous: Resents Lily's magical abilities.",
-                "Cruel: Neglects and mistreats Harry.",
-                "Nosy: Obsessively keeps up with the neighbors.",
-                "Conformist: Prioritizes appearances and social status."
+                "Jealous: She envies her sister's magical abilities.",
+                "Resentful: She harbors resentment towards Harry for being a reminder of her sister's magic.",
+                "Cruel: She actively participates in Harry's mistreatment.",
+                "Nosy: She's obsessed with keeping up appearances and gossiping about her neighbors.",
+                "Controlling: She, along with Vernon, maintains a strict and oppressive household."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Dudley Dursley",
-            "character_arc": "Shows a slight change towards the end, acknowledging Harry's bravery and offering a hesitant peace.",
+            "character_arc": "Dudley remains a spoiled and bullying child throughout the book. While he doesn't undergo significant development in the first book, his fear of Harry's accidental magic hints at a potential shift in his perception of Harry later in the series.",
             "personality_traits": [
-                "Spoiled: Used to getting everything he wants.",
-                "Bullying: Torments Harry relentlessly.",
-                "Cowardly: Fears magical repercussions.",
-                "Greedy: Obsessed with material possessions."
+                "Spoiled: He's accustomed to getting everything he wants.",
+                "Bullying: He torments Harry relentlessly.",
+                "Gluttonous: He's obsessed with food and constantly demands more.",
+                "Selfish: He only cares about himself and his own desires.",
+                "Cowardly: He's easily intimidated by anything that threatens his comfort."
+            ],
+            "memorable_quotes": []
+        },
+        {
+            "name": "Rubeus Hagrid",
+            "character_arc": "Hagrid serves as a guide and mentor to Harry, introducing him to the wizarding world and helping him adjust to his new life at Hogwarts.  He remains steadfastly loyal to Dumbledore and Harry, demonstrating his caring nature and bravery.",
+            "personality_traits": [
+                "Kind: He cares deeply for Harry and other magical creatures.",
+                "Loyal: He's devoted to Dumbledore and Hogwarts.",
+                "Brave: He faces danger to protect those he cares about.",
+                "Impulsive: He sometimes acts without thinking things through.",
+                "Emotional: He expresses his feelings openly."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Albus Dumbledore",
-            "character_arc": "Guides Harry through his journey, offering wisdom and support while also concealing crucial information.",
+            "character_arc": "Dumbledore remains a wise and enigmatic figure, guiding Harry from afar and orchestrating events to protect the Sorcerer's Stone. He reveals his wisdom and strategic thinking throughout the book, demonstrating his commitment to defeating Voldemort.",
             "personality_traits": [
-                "Wise: Possesses extensive knowledge of magic and human nature.",
-                "Manipulative: Orchestrates events behind the scenes.",
-                "Kind: Cares deeply for Harry and the safety of the wizarding world.",
-                "Mysterious: Keeps secrets and motivations hidden."
+                "Wise: He possesses immense knowledge and understanding.",
+                "Calm: He remains composed even in the face of danger.",
+                "Manipulative (for the greater good): He orchestrates events behind the scenes.",
+                "Kind: He cares deeply for Harry and the students of Hogwarts.",
+                "Powerful: He's one of the most powerful wizards in the world."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Minerva McGonagall",
-            "character_arc": "A stern but fair teacher who becomes a trusted mentor and protector of Harry.",
+            "character_arc": "McGonagall is introduced as a strict but fair teacher who recognizes Harry's potential. She demonstrates her dedication to Hogwarts and its students, enforcing rules while also showing compassion and understanding.",
             "personality_traits": [
-                "Strict: Upholds the rules of Hogwarts.",
-                "Fair: Treats students justly.",
-                "Brave: Defends Hogwarts against Voldemort.",
-                "Intelligent: Skilled witch and respected teacher."
+                "Strict: She upholds the rules of Hogwarts diligently.",
+                "Fair: She treats her students justly, rewarding good behavior and punishing misbehavior.",
+                "Intelligent: She's a highly skilled witch and a respected teacher.",
+                "Brave: She's willing to stand up to danger to protect Hogwarts.",
+                "Loyal: She's dedicated to Hogwarts and its students."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Ron Weasley",
-            "character_arc": "Overcomes initial insecurities and proves to be a loyal and supportive friend to Harry.",
+            "character_arc": "Ron starts as a somewhat insecure boy seeking acceptance and quickly becomes Harry's loyal friend. He faces his fears and insecurities throughout the book, proving his bravery and loyalty in the face of danger. He grows in confidence through his friendship with Harry and Hermione.",
             "personality_traits": [
-                "Loyal: Stands by Harry through thick and thin.",
-                "Insecure: Worries about his family's financial status and his own abilities.",
-                "Humorous: Provides comic relief.",
-                "Brave: Faces danger alongside Harry."
+                "Loyal: He stands by Harry through thick and thin.",
+                "Brave: He overcomes his fears to help Harry.",
+                "Insecure: He struggles with his family's financial situation and his place among his siblings.",
+                "Humorous: He provides comic relief in tense situations.",
+                "Kind: He's a good friend to both Harry and Hermione."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Hermione Granger",
-            "character_arc": "From bookish know-it-all to valuable friend and asset, Hermione learns the importance of friendship and bravery.",
+            "character_arc": "Hermione begins as a know-it-all but evolves into a valuable and loyal friend. She learns the importance of practical application over book knowledge and demonstrates her bravery and quick thinking in challenging situations. Her friendship with Harry and Ron helps her become less rigid and more open to experience.",
             "personality_traits": [
-                "Intelligent: Highly academic and knowledgeable.",
-                "Loyal: Supports Harry and Ron fiercely.",
-                "Brave: Faces danger despite her fears.",
-                "Kind: Cares deeply for her friends and others."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Severus Snape",
-            "character_arc": "His complex motivations remain hidden in the first book, presenting as a harsh antagonist.",
-            "personality_traits": [
-                "Bitter: Holds grudges and displays resentment.",
-                "Sarcastic: Uses cutting remarks and insults.",
-                "Protective (hidden): Secretly protects Harry due to his love for Lily.",
-                "Skilled: Highly proficient in potions and other magical arts."
+                "Intelligent: She's a highly academic and knowledgeable witch.",
+                "Loyal: She stands by her friends through thick and thin.",
+                "Brave: She faces danger with courage and resourcefulness.",
+                "Rule-oriented: She initially struggles to break the rules, even when necessary.",
+                "Kind: She cares deeply for her friends and wants to help them succeed."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Quirinus Quirrell",
-            "character_arc": "Revealed as a pawn of Voldemort, demonstrating the dangers of succumbing to dark forces.",
+            "character_arc": "Quirrell is introduced as a nervous and stuttering teacher, but his true nature as a servant of Voldemort is gradually revealed.  He transforms from a seemingly harmless individual into a menacing antagonist, ultimately consumed by Voldemort's power.",
             "personality_traits": [
-                "Timid: Appears nervous and stuttering.",
-                "Manipulated: Controlled by Voldemort.",
-                "Deceptive: Hides his true allegiance.",
-                "Weak: Easily influenced by stronger personalities."
+                "Deceptive: He hides his true allegiance to Voldemort.",
+                "Timid (initially): He pretends to be nervous and weak.",
+                "Manipulative: He attempts to trick Harry into helping Voldemort.",
+                "Ambitious: He desires power and recognition.",
+                "Cowardly: He ultimately fears Voldemort and is subservient to him."
             ],
             "memorable_quotes": []
         },
         {
-            "name": "Lord Voldemort",
-            "character_arc": "Seeks to regain power and immortality, establishing himself as the ultimate antagonist.",
+            "name": "Severus Snape",
+            "character_arc": "Snape remains an ambiguous character throughout the book. He appears to dislike Harry intensely but ultimately protects him from Quirrell/Voldemort.  His motivations remain unclear, leaving the reader to question his true allegiance.",
             "personality_traits": [
-                "Ruthless: Shows no mercy or compassion.",
-                "Power-hungry: Driven by a desire for dominance.",
-                "Evil: Embraces dark magic and seeks to destroy.",
-                "Manipulative: Uses others to achieve his goals."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Draco Malfoy",
-            "character_arc": "Establishes himself as Harry's rival, embodying prejudice and elitism.",
-            "personality_traits": [
-                "Arrogant: Believes in his own superiority.",
-                "Prejudiced: Looks down on those with different backgrounds.",
-                "Spoiled: Used to getting his way.",
-                "Cowardly: Relies on his father's influence."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Neville Longbottom",
-            "character_arc": "Begins as a shy and clumsy student, showing hints of hidden bravery.",
-            "personality_traits": [
-                "Timid: Lacks confidence in his abilities.",
-                "Loyal: Stands up to his friends when necessary.",
-                "Kind: Cares about others' well-being.",
-                "Brave (emerging): Demonstrates courage in small moments."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Fred and George Weasley",
-            "character_arc": "Introduce mischief and humor to Hogwarts, providing levity and support to Harry.",
-            "personality_traits": [
-                "Mischievous: Enjoy playing pranks and causing trouble.",
-                "Loyal: Support their family and friends.",
-                "Brave: Stand up against injustice.",
-                "Creative: Invent new spells and magical items."
-            ],
-            "memorable_quotes": []
-        },
-        {
-            "name": "Argus Filch",
-            "character_arc": "Remains a static antagonist, enforcing rules and punishing students.",
-            "personality_traits": [
-                "Bitter: Resents students and their enjoyment.",
-                "Strict: Enforces rules rigidly.",
-                "Powerless: Lacks magical abilities.",
-                "Cruel: Enjoys punishing students."
+                "Resentful: He seems to harbor a deep resentment towards Harry.",
+                "Sarcastic: He uses sarcasm as a defense mechanism.",
+                "Intelligent: He's a highly skilled potion master.",
+                "Protective (of Harry, though subtly): He saves Harry's life during the Quidditch match.",
+                "Mysterious: His true motivations and allegiances remain unclear."
             ],
             "memorable_quotes": []
         },
         {
             "name": "Nicolas Flamel",
-            "character_arc": "Plays a crucial role in the story's plot as the creator of the Sorcerer's Stone.",
+            "character_arc": "Nicolas Flamel is only mentioned in the book and doesn't have a character arc.  He's the creator of the Sorcerer's Stone and plays a crucial role in the story's plot, though he doesn't appear directly.",
             "personality_traits": [
-                "Wise: Possesses extensive knowledge of alchemy.",
-                "Reclusive: Lives in hiding to protect the Stone.",
-                "Generous: Allows Dumbledore to use the Stone.",
-                "Immortal (effectively): Achieved extended life through the Elixir of Life."
+                "Alchemist: He created the Sorcerer's Stone.",
+                "Reclusive: He lives in seclusion with his wife, Perenelle."
             ],
             "memorable_quotes": []
         }
